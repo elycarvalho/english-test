@@ -160,11 +160,11 @@ let intermediario = [
   	correta: "A"
   },  
   {
-  	pergs: "pergunta 2",
-  	opcaoA: "resposta errada",
-  	opcaoB: "resposta errada",
-  	opcaoC: "correta",
-  	opcaoD: "resposta errada",
+  	pergs: "O que é o Present Perfect e quando usamos?",
+  	opcaoA: "Expressa ações habituais no passado.",
+  	opcaoB: "Indica ações concluídas em um momento específico do passado.",
+  	opcaoC: "Indica ações que aconteceram no passado, mas têm relevância no presente.",
+  	opcaoD: "Descreve ações em progresso no presente.",
   	correta: "C"
   },  
   {
@@ -533,17 +533,17 @@ function iniciar() {
 
 function processaPergunta() {
   switch(categorias.value){
-    case 'geografia':
-      bancoPerguntas = geografia
+    case 'basico':
+      bancoPerguntas = basico
       break
-    case 'ingles':
-      bancoPerguntas = ingles
+    case 'intermediario':
+      bancoPerguntas = intermediario
       break
-    case 'historia':
-      bancoPerguntas = historia
+    case 'avancado':
+      bancoPerguntas = avancado
       break 
-    case 'quimica':
-      bancoPerguntas = quimica
+    case 'fluente':
+      bancoPerguntas = fluente
     }
 
   console.log('respondidas ' + respondidas)
