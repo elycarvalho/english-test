@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>English test</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="script.js" defer></script>
+</head>
+<body>
+	<main>
+	  <div class="tela-inicial">
+	  	<legend>Selecione um nível:</legend>
+		<select name="categorias" class="categorias">
+			<option value="geografia">Básico</option>
+			<option value="ingles">Intermediário</option>
+			<option value="historia">Avançado</option>
+			<option value="quimica">Fluente</option>
+		</select>
+        <button class="btn-comecar">Começar</button>
+	  </div>
+
+	  <div class="container-jogo">
+	  	<div class="pergunta">Pergunta</div>
+      
+	  	<div class="mostra-contador">15</div>
+
+	  	<div class="qtde-respostas">
+	  		<p>Corretas:</p>
+			<div class="qtde-corretas">0</div>
+			<p>Erradas:</p>
+			<div class="qtde-erradas">0</div>
+			<p>Não respondidas:</p>
+			<div class="nao-respondidas">0</div>
+	  	</div>
+
+        <hr class="upper-line">
+	  	<div class="container-opcoes">	
+		  	<div class="opcao-a opcoes" onclick="checaResposta('A')">Opção A</div>
+		  	<div class="opcao-b opcoes" onclick="checaResposta('B')">Opção B</div>
+		  	<div class="opcao-c opcoes" onclick="checaResposta('C')">Opção C</div>
+		  	<div class="opcao-d opcoes" onclick="checaResposta('D')">Opção D</div>
+		</div>
+		<hr class="lower-line">
+
+	  </div>
+
+	  <div class="tela-final" style="display: none;">
+	  	<div class="msg-final">Mensagem final</div>
+	  	<div class="corretas-final">corretas</div>
+	  	<div class="erradas-final">erradas</div>
+	  	<div class="nao-respond-final">nao respondidas</div>
+	  	<button class="btn-reiniciar">Reiniciar</button>
+	  </div>
+    </main>
+</body>
+</html>
