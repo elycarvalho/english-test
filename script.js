@@ -61,7 +61,7 @@ let basico = [
   	correta: "D"
   },  
   {
-  	pergs: "Como fica a frase 'você é um estudante' na forma de pergunta?",
+  	pergs: "Como perguntar 'você é um estudante'?",
   	opcaoA: "Are you a student?",
   	opcaoB: "You are a student?",
   	opcaoC: "You is student?",
@@ -152,246 +152,246 @@ let basico = [
 
 let intermediario = [
   {
-  	pergs: "Quais são os três tempos verbais mais comuns em inglês?",
-  	opcaoA: "Simple, Continuous, Perfect",
-  	opcaoB: "Past, Present, Future",
-  	opcaoC: "Present, Past, Future",
-  	opcaoD: "Simple, Progressive, Perfect",
-  	correta: "A"
-  },  
-  {
-  	pergs: "O que é o Present Perfect e quando usamos?",
-  	opcaoA: "Expressa ações habituais no passado.",
-  	opcaoB: "Indica ações concluídas em um momento específico do passado.",
-  	opcaoC: "Indica ações que aconteceram no passado, mas têm relevância no presente.",
-  	opcaoD: "Descreve ações em progresso no presente.",
+  	pergs: "Qual frase está no simple past tense?",
+  	opcaoA: " I am eating dinner.",
+    opcaoB: " She will go to the store.",
+    opcaoC: " They played soccer yesterday.",
+    opcaoD: " We are going to the park.",
   	correta: "C"
   },  
   {
-  	pergs: "pergunta 3",
-  	opcaoA: "resposta",
-  	opcaoB: "resposta",
-  	opcaoC: "correta",
-  	opcaoD: "resposta",
-  	correta: "C"
-  },  
-  {
-  	pergs: "pergunta 4",
-  	opcaoA: "resposta",
-  	opcaoB: "resposta",
-  	opcaoC: "resposta",
-  	opcaoD: "correta",
-  	correta: "D"
-  },  
-  {
-  	pergs: "pergunta 5",
-  	opcaoA: "correta",
-  	opcaoB: "resposta",
-  	opcaoC: "resposta",
-  	opcaoD: "resposta",
-  	correta: "A"
-  },  
-  {
-  	pergs: "pergunta 6",
-  	opcaoA: "resposta",
-  	opcaoB: "correta",
-  	opcaoC: "resposta",
-  	opcaoD: "resposta",
+  	pergs: '"Could you please repeat that?" significa ________.',
+  	opcaoA: " Eu não entendo.",
+    opcaoB: " Você poderia repetir, por favor?",
+    opcaoC: " Eu não concordo.",
+    opcaoD: " O que você está fazendo?",
   	correta: "B"
   },  
   {
-  	pergs: "pergunta 7",
-  	opcaoA: "correta",
-  	opcaoB: "resposta",
-  	opcaoC: "resposta",
-  	opcaoD: "resposta",
-  	correta: "A"
+  	pergs: "Qual frase está correta?",
+  	opcaoA: " My sister is a nurse since five years.",
+    opcaoB: " I have been to Paris last month.",
+    opcaoC: " She has lived here for two years.",
+    opcaoD: " They didn't came to the party.",
+  	correta: "C"
   },  
   {
-  	pergs: "pergunta 8",
-  	opcaoA: "resposta",
-  	opcaoB: "resposta",
-  	opcaoC: "resposta",
-  	opcaoD: "correta",
+  	pergs: 'como se diz "me desculpe" em inglês?',
+  	opcaoA: "me despiace",
+  	opcaoB: "worry me",
+  	opcaoC: "I'm fine",
+  	opcaoD: "I'm sorry",
   	correta: "D"
   },  
   {
-  	pergs: "pergunta 9",
-  	opcaoA: "resposta",
-  	opcaoB: "resposta",
-  	opcaoC: "correta",
+  	pergs: 'qual a forma comparativa de "good"?',
+  	opcaoA: "better",
+  	opcaoB: "best",
+  	opcaoC: "gooder",
+  	opcaoD: "more good",
+  	correta: "A"
+  },  
+  {
+  	pergs: 'qual frase está no "present continuous tense"?',
+  	opcaoA: " I will travel to Europe next summer.",
+    opcaoB: " She sings in a choir.",
+    opcaoC: " They are studying for the exam.",
+    opcaoD: " We went to the beach yesterday.",
+  	correta: "C"
+  },  
+  {
+  	pergs: 'qual a forma correta de "I have" no past tense?',
+  	opcaoA: "I had",
+    opcaoB: "I has",
+    opcaoC: "I haven",
+    opcaoD: "I haved",
+  	correta: "A"
+  },  
+  {
+  	pergs: "(Complete a frase) I have been studying English ________ five years.",
+  	opcaoA: "since",
+  	opcaoB: "during",
+  	opcaoC: "by",
+  	opcaoD: "for",
+  	correta: "D"
+  },  
+  {
+  	pergs: "(complete a expressão idiomática) can you lend me ___________?",
+  	opcaoA: "an arm",
+  	opcaoB: "a nose",
+  	opcaoC: "a hand",
   	opcaoD: "resposta",
   	correta: "C"
   },  
   {
-  	pergs: "pergunta 10",
-  	opcaoA: "correta",
-  	opcaoB: "resposta",
-  	opcaoC: "resposta",
-  	opcaoD: "resposta",
+  	pergs: 'qual palavra é sinônimo de "happy"?',
+  	opcaoA: "joyful",
+  	opcaoB: "sad",
+  	opcaoC: "heavy",
+  	opcaoD: "angry",
   	correta: "A"
   },
   {
-    pergs: "pergunta 11",
-    opcaoA: "resposta",
-    opcaoB: "correta",
-    opcaoC: "resposta",
-    opcaoD: "resposta",
+    pergs:  '(complete a frase) she is taller _________ her brother.',
+    opcaoA: "that",
+    opcaoB: "than",
+    opcaoC: "more",
+    opcaoD: "beyound",
     correta: "B"
   },  
   {
-    pergs: "pergunta 12",
-    opcaoA: "correta",
-    opcaoB: "resposta",
-    opcaoC: "resposta",
-    opcaoD: "resposta",
+    pergs: 'qual é a ordem correta dos adjetivos na frase: "He is a tall, handsome, intellingent man"?',
+    opcaoA: "handsome, tall, intellingent",
+    opcaoB: "tall, handsome, intellingent",
+    opcaoC: "intellingent, handsome, tall",
+    opcaoD: "handsome, intellingent, tall",
     correta: "A"
   },  
   {
-    pergs: "pergunta 13",
-    opcaoA: "resposta",
-    opcaoB: "resposta",
-    opcaoC: "resposta",
-    opcaoD: "correta",
+    pergs: 'qual frase está correta?',
+    opcaoA: " He don't like coffee.",
+    opcaoB: " They is going to the party.",
+    opcaoC: " She have two brothers.",
+    opcaoD: " We have been friends for years.",
     correta: "D"
   },  
   {
-    pergs: "pergunta 14",
-    opcaoA: "resposta",
-    opcaoB: "resposta",
-    opcaoC: "correta",
-    opcaoD: "resposta",
+    pergs: 'qual é o contrário de "hard"?',
+    opcaoA: "easy",
+    opcaoB: "newbie",
+    opcaoC: "difficult",
+    opcaoD: "rookie",
     correta: "C"
   },  
   {
-    pergs: "pergunta 15",
-    opcaoA: "correta",
-    opcaoB: "resposta",
-    opcaoC: "resposta",
-    opcaoD: "resposta",
+    pergs:  "(complete a frase) I would like a cup of tea, ________?",
+    opcaoA: " could you bring me one",
+    opcaoB: " can I eat one",
+    opcaoC: " do you let me one",
+    opcaoD: " are you coming, please",
     correta: "A"
   } 
 ]
 
 let avançado = [
   {
-  	pergs: "pergunta de historia",
-  	opcaoA: "correta",
-  	opcaoB: "errada",
-  	opcaoC: "errada",
-  	opcaoD: "errada",
-  	correta: "A"
-  },  
-  {
-  	pergs: "pergunta 2",
-  	opcaoA: "resposta errada",
-  	opcaoB: "resposta errada",
-  	opcaoC: "correta",
-  	opcaoD: "resposta errada",
-  	correta: "C"
-  },  
-  {
-  	pergs: "pergunta 3",
-  	opcaoA: "resposta",
-  	opcaoB: "resposta",
-  	opcaoC: "correta",
-  	opcaoD: "resposta",
-  	correta: "C"
-  },  
-  {
-  	pergs: "pergunta 4",
-  	opcaoA: "resposta",
-  	opcaoB: "resposta",
-  	opcaoC: "resposta",
-  	opcaoD: "correta",
-  	correta: "D"
-  },  
-  {
-  	pergs: "pergunta 5",
-  	opcaoA: "correta",
-  	opcaoB: "resposta",
-  	opcaoC: "resposta",
-  	opcaoD: "resposta",
-  	correta: "A"
-  },  
-  {
-  	pergs: "pergunta 6",
-  	opcaoA: "resposta",
-  	opcaoB: "correta",
-  	opcaoC: "resposta",
-  	opcaoD: "resposta",
-  	correta: "B"
-  },  
-  {
-  	pergs: "pergunta 7",
-  	opcaoA: "correta",
-  	opcaoB: "resposta",
-  	opcaoC: "resposta",
-  	opcaoD: "resposta",
-  	correta: "A"
-  },  
-  {
-  	pergs: "pergunta 8",
-  	opcaoA: "resposta",
-  	opcaoB: "resposta",
-  	opcaoC: "resposta",
-  	opcaoD: "correta",
-  	correta: "D"
-  },  
-  {
-  	pergs: "pergunta 9",
-  	opcaoA: "resposta",
-  	opcaoB: "resposta",
-  	opcaoC: "correta",
-  	opcaoD: "resposta",
-  	correta: "C"
-  },  
-  {
-  	pergs: "pergunta 10",
-  	opcaoA: "correta",
-  	opcaoB: "resposta",
-  	opcaoC: "resposta",
-  	opcaoD: "resposta",
-  	correta: "A"
-  },
-  {
-    pergs: "pergunta 11",
-    opcaoA: "resposta",
-    opcaoB: "correta",
-    opcaoC: "resposta",
-    opcaoD: "resposta",
-    correta: "B"
-  },  
-  {
-    pergs: "pergunta 12",
-    opcaoA: "correta",
-    opcaoB: "resposta",
-    opcaoC: "resposta",
-    opcaoD: "resposta",
-    correta: "A"
-  },  
-  {
-    pergs: "pergunta 13",
-    opcaoA: "resposta",
-    opcaoB: "resposta",
-    opcaoC: "resposta",
-    opcaoD: "correta",
-    correta: "D"
-  },  
-  {
-    pergs: "pergunta 14",
-    opcaoA: "resposta",
-    opcaoB: "resposta",
-    opcaoC: "correta",
-    opcaoD: "resposta",
+  	pergs: "qual frase está na forma condicional correta?",
+  	opcaoA: " If I will see her, I will say hello.",
+    opcaoB: " If I see her, I would say hello.",
+    opcaoC: " If I see her, I will say hello.",
+    opcaoD: " If I will see her, I would say hello.",
     correta: "C"
   },  
   {
-    pergs: "pergunta 15",
-    opcaoA: "correta",
-    opcaoB: "resposta",
-    opcaoC: "resposta",
-    opcaoD: "resposta",
+  	pergs: 'o que significa a palavra "corageous"?',
+  	opcaoA: "correto",
+  	opcaoB: "corajoso",
+  	opcaoC: "paciente",
+  	opcaoD: "carinhoso",
+  	correta: "B"
+  },  
+  {
+  	pergs: "(complete a frase) It's raining heavily, I'll take ____________",
+  	opcaoA: "reindeer",
+  	opcaoB: "little shadow",
+  	opcaoC: "an umbrella",
+  	opcaoD: "guard drain",
+  	correta: "C"
+  },  
+  {
+  	pergs: 'qual frase está na "passive voice"?',
+  	opcaoA: "The teacher explained the lesson.",
+    opcaoB: "They built a new bridge.",
+    opcaoC: "She painted a beautiful picture.",
+    opcaoD: "The book was written by a famous author.",
+  	correta: "D"
+  },  
+  {
+  	pergs: 'qual a forma correta do verbo "to go" present perfect tense, para "we"?',
+  	opcaoA: "we have gone",
+  	opcaoB: "went",
+  	opcaoC: "has went",
+  	opcaoD: "have been going",
+  	correta: "A"
+  },  
+  {
+  	pergs: 'qual palavra é o antônimo de "generous"?',
+  	opcaoA: "kind",
+  	opcaoB: "selfish",
+  	opcaoC: "polite",
+  	opcaoD: "friendly",
+  	correta: "B"
+  },  
+  {
+  	pergs: "She ________ English for many years before moving to the United States.",
+  	opcaoA: "has studied",
+  	opcaoB: "was studying",
+  	opcaoC: "studied",
+  	opcaoD: "studies",
+  	correta: "A"
+  },  
+  {
+  	pergs: 'o que significa o phrasal verb "carry out"?',
+  	opcaoA: "carregar algo para fora",
+  	opcaoB: "cancelar ou desistir de algo",
+  	opcaoC: "explorar ou investigar algo",
+  	opcaoD: "realizar ou executar algo",
+  	correta: "D"
+  },  
+  {
+  	pergs: 'o que significa a expressão "piece of cake"?',
+  	opcaoA: "um bolo delicioso",
+  	opcaoB: "uma obra prima",
+  	opcaoC: "algo fácil ou simples de fazer",
+  	opcaoD: "uma coisa frágil",
+  	correta: "C"
+  },  
+  {
+  	pergs: 'O que significa o termo "scapegoat"?',
+  	opcaoA: "bode expiatório, pessoa culpada injustamente",
+  	opcaoB: "um tipo de jogo de tabuleiro",
+  	opcaoC: "um plano de fuga",
+  	opcaoD: "um tipo de animal do deserto",
+  	correta: "A"
+  },
+  {
+    pergs: '(complete a frase) She plays the piano ________ anyone I know.',
+    opcaoA: "so good as",
+    opcaoB: "better than",
+    opcaoC: "more good as",
+    opcaoD: "the best than",
+    correta: "B"
+  },  
+  {
+    pergs: 'como fica a frase "you are good" no past perfect tense?',
+    opcaoA: "you had been good",
+    opcaoB: "you were good",
+    opcaoC: "you have been",
+    opcaoD: "you was good",
+    correta: "A"
+  },  
+  {
+    pergs: "(complete a frase) If I had studied harder, ________ the exam.",
+    opcaoA: "I would pass",
+    opcaoB: "I will pass",
+    opcaoC: "I had been passed",
+    opcaoD: "I would have passed",
+    correta: "D"
+  },  
+  {
+    pergs: 'qual o significado da expressão "get along with"?',
+    opcaoA: "levar junto com",
+    opcaoB: "concordar com",
+    opcaoC: "ter bom relacionamento com",
+    opcaoD: "dar continuidade a",
+    correta: "C"
+  },  
+  {
+    pergs: 'qual frase está usando o pronome relativo da forma correta?',
+    opcaoA: "The house, where I grew up, is in a small town.",
+    opcaoB: "The book, who I read last week, was very interesting.",
+    opcaoC: "The person, which is standing over there, is my sister.",
+    opcaoD: "The car, whom I bought yesterday, is blue.",
     correta: "A"
   } 
 ]
