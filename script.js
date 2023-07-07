@@ -11,9 +11,6 @@ const mostraContador = document.querySelector('.mostra-contador')
 const corretasFinal = document.querySelector('.corretas-final')
 const erradasFinal = document.querySelector('.erradas-final')
 const naoRespondFinal = document.querySelector('.nao-respond-final')
-let qtdeCorretas = document.querySelector(".qtde-corretas")
-let qtdeErradas = document.querySelector(".qtde-erradas")
-let qtdeNaoResp = document.querySelector(".nao-respondidas")
 let respCorretas = 0
 let respErradas  = 0
 let naoRespondida = 0
@@ -398,83 +395,83 @@ let avançado = [
 
 let fluente = [
   {
-  	pergs: "pergunta de quimica",
-  	opcaoA: "correta",
-  	opcaoB: "errada",
-  	opcaoC: "errada",
-  	opcaoD: "errada",
+  	pergs: 'What is the correct form of the verb "to run" in the past participle?',
+  	opcaoA: "run",
+  	opcaoB: "ran",
+  	opcaoC: "runned",
+  	opcaoD: "running",
   	correta: "A"
   },  
   {
-  	pergs: "pergunta 2",
-  	opcaoA: "resposta errada",
-  	opcaoB: "resposta errada",
-  	opcaoC: "correta",
-  	opcaoD: "resposta errada",
+  	pergs: 'Which sentence is in the Gerund form?',
+  	opcaoA: "I will go to the store.",
+  	opcaoB: "They have finished their homework.",
+  	opcaoC: "She is swimming in the pool.",
+  	opcaoD: "I enjoy reading books.",
   	correta: "C"
   },  
   {
-  	pergs: "pergunta 3",
-  	opcaoA: "resposta",
-  	opcaoB: "resposta",
-  	opcaoC: "correta",
-  	opcaoD: "resposta",
+  	pergs: 'What is the meaning of the idiom "to kick the bucket"?',
+  	opcaoA: "give up everything",
+  	opcaoB: "to go crazy",
+  	opcaoC: "to die",
+  	opcaoD: "to get angry",
   	correta: "C"
   },  
   {
-  	pergs: "pergunta 4",
-  	opcaoA: "resposta",
-  	opcaoB: "resposta",
-  	opcaoC: "resposta",
-  	opcaoD: "correta",
+  	pergs: 'What is the correct form of the verb "to do" in the subjunctive mood for "she"?',
+  	opcaoA: "do",
+  	opcaoB: "done",
+  	opcaoC: "did",
+  	opcaoD: "does",
   	correta: "D"
   },  
   {
-  	pergs: "pergunta 5",
-  	opcaoA: "correta",
-  	opcaoB: "resposta",
-  	opcaoC: "resposta",
-  	opcaoD: "resposta",
+  	pergs: 'what does the idiom "let the dust settle" mean?',
+  	opcaoA: "to allow a situation to become calm after something exciting or unusual has happened",
+  	opcaoB: "to wait for the dust settle in a road to keep going",
+  	opcaoC: "to get the house tidy",
+  	opcaoD: "to set fire to the woods",
   	correta: "A"
   },  
   {
-  	pergs: "pergunta 6",
-  	opcaoA: "resposta",
-  	opcaoB: "correta",
-  	opcaoC: "resposta",
-  	opcaoD: "resposta",
+  	pergs: 'Which word is an antonym for "diligent"?',
+  	opcaoA: "hardworking",
+  	opcaoB: "lazy",
+  	opcaoC: "punctual",
+  	opcaoD: "efficient",
   	correta: "B"
   },  
   {
-  	pergs: "pergunta 7",
-  	opcaoA: "correta",
-  	opcaoB: "resposta",
-  	opcaoC: "resposta",
-  	opcaoD: "resposta",
+  	pergs: 'She has been living in London ________ five years.',
+  	opcaoA: "for",
+  	opcaoB: "since",
+  	opcaoC: "during",
+  	opcaoD: "from",
   	correta: "A"
   },  
   {
-  	pergs: "pergunta 8",
-  	opcaoA: "resposta",
-  	opcaoB: "resposta",
-  	opcaoC: "resposta",
-  	opcaoD: "correta",
+  	pergs: 'What does the phrase "break the ice" mean?',
+  	opcaoA: "Start a conversation or social interaction.",
+  	opcaoB: "break something fragile",
+  	opcaoC: "make cold drinks",
+  	opcaoD: "remove snow from the streets",
   	correta: "D"
   },  
   {
-  	pergs: "pergunta 9",
-  	opcaoA: "resposta",
-  	opcaoB: "resposta",
-  	opcaoC: "correta",
-  	opcaoD: "resposta",
+  	pergs: 'What does the term "to think outside the box" mean?',
+  	opcaoA: "To think literally, disregarding the context.",
+  	opcaoB: "To think about the misteries of the universe",
+  	opcaoC: "To think in a creative and innovative way, breaking away from conventional norms.",
+  	opcaoD: "To think only within established boundaries.",
   	correta: "C"
   },  
   {
-  	pergs: "pergunta 10",
-  	opcaoA: "correta",
-  	opcaoB: "resposta",
-  	opcaoC: "resposta",
-  	opcaoD: "resposta",
+  	pergs: 'I had never seen such a beautiful sunset ________.',
+  	opcaoA: "before",
+  	opcaoB: "beyound",
+  	opcaoC: "evenly",
+  	opcaoD: "sooner",
   	correta: "A"
   }, 
   {
@@ -486,35 +483,35 @@ let fluente = [
     correta: "B"
   },  
   {
-    pergs: "pergunta 12",
-    opcaoA: "correta",
-    opcaoB: "resposta",
-    opcaoC: "resposta",
-    opcaoD: "resposta",
+    pergs: 'What is the correct form of the verb "to have" in the present perfect continuous tense for "they"?',
+    opcaoA: "have been having",
+    opcaoB: "have had",
+    opcaoC: "has had",
+    opcaoD: "has been having",
     correta: "A"
   },  
   {
-    pergs: "pergunta 13",
-    opcaoA: "resposta",
-    opcaoB: "resposta",
-    opcaoC: "resposta",
-    opcaoD: "correta",
+    pergs: 'If I had known the answer, ________ it.',
+    opcaoA: "If I would win the lottery, I will buy a mansion.",
+    opcaoB: "If I would win the lottery, I would buy a mansion.",
+    opcaoC: "If I win the lottery, I would buy a mansion.",
+    opcaoD: "If I win the lottery, I will buy a mansion.",
     correta: "D"
   },  
   {
-    pergs: "pergunta 14",
-    opcaoA: "resposta",
-    opcaoB: "resposta",
-    opcaoC: "correta",
-    opcaoD: "resposta",
+    pergs: 'What is the meaning of the phrasal verb "look forward to"?',
+    opcaoA: "olhar para trás",
+    opcaoB: "prever o futuro",
+    opcaoC: "esperar ansiosamente por",
+    opcaoD: "procurar por",
     correta: "C"
   },  
   {
-    pergs: "pergunta 15",
-    opcaoA: "correta",
-    opcaoB: "resposta",
-    opcaoC: "resposta",
-    opcaoD: "resposta",
+    pergs: 'If I had known the answer, ________ it.',
+    opcaoA: "I would have said",
+    opcaoB: "I would said",
+    opcaoC: "I would have say",
+    opcaoD: "I would say",
     correta: "A"
   } 
 ]
@@ -547,7 +544,7 @@ function processaPergunta() {
     }
 
   console.log('respondidas ' + respondidas)
-	if(respondidas < 10) {
+	if(respondidas < 15) {
     
 		perguntaEmJogo = bancoPerguntas[respondidas]
     pergunta.innerHTML = perguntaEmJogo.pergs
@@ -576,7 +573,6 @@ function contador() {
   } else {
     tempoContador = 15
     naoRespondida++
-    qtdeNaoResp.innerHTML = naoRespondida
     processaPergunta()
     console.log('fim do tempo')
   }
@@ -587,15 +583,13 @@ function checaResposta(resposta) {
   if(resposta === perguntaEmJogo.correta) {
     console.log('correto')
     respCorretas++
-    qtdeCorretas.innerHTML = respCorretas
     tempoContador = 15
   } else {
     respErradas++
-    qtdeErradas.innerHTML = respErradas
     tempoContador = 15
     console.log('errada')
   }
-  if(respCorretas > 10) {
+  if(respCorretas > 15) {
     respCorretas = 0
   }
   processaPergunta()
