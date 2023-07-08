@@ -14,9 +14,11 @@ const naoRespondFinal = document.querySelector('.nao-respond-final')
 let respCorretas = 0
 let respErradas  = 0
 let naoRespondida = 0
-let mensagem = document.querySelector(".mensagem")
+const mensagem = document.querySelector(".mensagem")
 const telaFinal = document.querySelector(".tela-final")
-let msgFinal = document.querySelector(".msg-final")
+const msgFinal = document.querySelector(".msg-final")
+const porcentagem = document.querySelector(".porcentagem")
+
 const btnReiniciar = document.querySelector(".btn-reiniciar")
 let respondidas = 0
 let perguntaEmJogo = ''
@@ -98,7 +100,7 @@ let basico = [
   	correta: "C"
   },  
   {
-  	pergs: "como se diz 'amigo' em inglês?",
+  	pergs: 'como se diz "amigo" em inglês?',
   	opcaoA: "friend",
   	opcaoB: "french",
   	opcaoC: "frozen",
@@ -114,7 +116,7 @@ let basico = [
     correta: "B"
   },  
   {
-    pergs: "como dizer 'eu não entendo' em inglês?",
+    pergs: 'como dizer "eu não entendo" em inglês?',
     opcaoA: "I don't understand",
     opcaoB: "I don't remember",
     opcaoC: "I not stand",
@@ -130,7 +132,7 @@ let basico = [
     correta: "D"
   },  
   {
-    pergs: "como perguntar a idade de alguém?",
+    pergs: 'como perguntar a idade de alguém?',
     opcaoA: "how many years do you have?",
     opcaoB: "how much ears are you?",
     opcaoC: "how old are you?",
@@ -138,7 +140,7 @@ let basico = [
     correta: "C"
   },  
   {
-    pergs: "como perguntar de onde a pessoa é?",
+    pergs: 'como perguntar "de onde você é"?',
     opcaoA: "where are you from?",
     opcaoB: "of where you are?",
     opcaoC: "how are you from?",
@@ -270,7 +272,7 @@ let intermediario = [
   } 
 ]
 
-let avançado = [
+let avancado = [
   {
   	pergs: "qual frase está na forma condicional correta?",
   	opcaoA: " If I will see her, I will say hello.",
@@ -555,14 +557,20 @@ function processaPergunta() {
    
     respondidas++
 	} else {
-    telaFinal.style.display = 'flex'
-    erradasFinal.innerHTML = `Erradas: ${respErradas}`
-    corretasFinal.innerHTML = `Corretas: ${respCorretas}`
-    naoRespondFinal.innerHTML = `Não respondidas: ${naoRespondida}`
-
-    clearInterval(intervaloContador)
-    console.log('fim')
+    criaTelaFinal()
   }  
+}
+
+function criaTelaFinal(){
+  clearInterval(intervaloContador)
+  telaFinal.style.display = 'flex'
+  erradasFinal.innerHTML = `Erradas: ${respErradas}`
+  corretasFinal.innerHTML = `Corretas: ${respCorretas}`
+  naoRespondFinal.innerHTML = `Não respondidas: ${naoRespondida}`
+  let porcento = Math.round((respCorretas / 15) * 100)
+  porcentagem.innerHTML = `${porcento}%`
+  console.log('porcento' + porcento)
+  
 }
 
 function contador() {
