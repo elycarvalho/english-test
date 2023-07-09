@@ -22,7 +22,7 @@ const porcentagem = document.querySelector(".porcentagem")
 const btnReiniciar = document.querySelector(".btn-reiniciar")
 let respondidas = 0
 let perguntaEmJogo = ''
-let tempoContador = 15
+let tempoContador = 30
 
 let bancoPerguntas = []
 
@@ -63,8 +63,8 @@ let basico = [
   	pergs: "Como perguntar 'você é um estudante'?",
   	opcaoA: "Are you a student?",
   	opcaoB: "You are a student?",
-  	opcaoC: "You is student?",
-  	opcaoD: "Do you a student?",
+  	opcaoC: "You is a student?",
+  	opcaoD: "Do you are a student?",
   	correta: "A"
   },  
   {
@@ -92,7 +92,7 @@ let basico = [
   	correta: "D"
   },  
   {
-  	pergs: "O que significa a expressão 'I'm sorry'?",
+  	pergs: "O que significa a expressão I'm sorry?",
   	opcaoA: "bom dia",
   	opcaoB: "de nada",
   	opcaoC: "me desculpe",
@@ -159,7 +159,7 @@ let intermediario = [
   	correta: "C"
   },  
   {
-  	pergs: '"Could you please repeat that?" significa ________.',
+  	pergs: 'A tradução de "Could you please repeat that?" é...',
   	opcaoA: " Eu não entendo.",
     opcaoB: " Você poderia repetir, por favor?",
     opcaoC: " Eu não concordo.",
@@ -239,11 +239,11 @@ let intermediario = [
     correta: "B"
   },  
   {
-    pergs: 'qual é a ordem correta dos adjetivos na frase: "He is a tall, handsome, intellingent man"?',
-    opcaoA: "handsome, tall, intellingent",
-    opcaoB: "tall, handsome, intellingent",
-    opcaoC: "intellingent, handsome, tall",
-    opcaoD: "handsome, intellingent, tall",
+    pergs: 'Choose the correct form of the verb: "I _________ TV last night."?',
+    opcaoA: "watched",
+    opcaoB: "watch",
+    opcaoC: "watches",
+    opcaoD: "watching",
     correta: "A"
   },  
   {
@@ -322,7 +322,7 @@ let avancado = [
   	correta: "B"
   },  
   {
-  	pergs: "She ________ English for many years before moving to the United States.",
+  	pergs: "(complete) She ________ English for many years before moving to the United States.",
   	opcaoA: "has studied",
   	opcaoB: "was studying",
   	opcaoC: "studied",
@@ -458,12 +458,12 @@ let fluente = [
   	opcaoB: "break something fragile",
   	opcaoC: "make cold drinks",
   	opcaoD: "remove snow from the streets",
-  	correta: "D"
+  	correta: "A"
   },  
   {
   	pergs: 'What does the term "to think outside the box" mean?',
   	opcaoA: "To think literally, disregarding the context.",
-  	opcaoB: "To think about the misteries of the universe",
+  	opcaoB: "To think about the misteries of the universe and the world as a box",
   	opcaoC: "To think in a creative and innovative way, breaking away from conventional norms.",
   	opcaoD: "To think only within established boundaries.",
   	correta: "C"
@@ -477,11 +477,11 @@ let fluente = [
   	correta: "A"
   }, 
   {
-    pergs: "pergunta 11",
-    opcaoA: "resposta",
-    opcaoB: "correta",
-    opcaoC: "resposta",
-    opcaoD: "resposta",
+    pergs: "'he's pretending to be rich, that's why he's wearing that costume.' means...",
+    opcaoA: "ele está pretendendo ser rico, por isso está adotando esse costume.",
+    opcaoB: "ele está fingindo ser rico, e por isso que ele está vestindo aquela fantasia.",
+    opcaoC: "ele pretende ser rico, por isso está se acostumando a se vestir assim.",
+    opcaoD: "ele se finge de rico porque ele costuma vestir uma fantasia.",
     correta: "B"
   },  
   {
@@ -564,9 +564,9 @@ function processaPergunta() {
 function criaTelaFinal(){
   clearInterval(intervaloContador)
   telaFinal.style.display = 'flex'
-  erradasFinal.innerHTML = `Erradas: ${respErradas}`
-  corretasFinal.innerHTML = `Corretas: ${respCorretas}`
-  naoRespondFinal.innerHTML = `Não respondidas: ${naoRespondida}`
+  erradasFinal.innerHTML = `Erros: ${respErradas}`
+  corretasFinal.innerHTML = `Acertos: ${respCorretas}`
+  naoRespondFinal.innerHTML = `Sem respostas: ${naoRespondida}`
   let porcento = Math.round((respCorretas / 15) * 100)
   porcentagem.innerHTML = `${porcento}%`
   console.log('porcento' + porcento)
@@ -579,7 +579,7 @@ function contador() {
     mostraContador.innerHTML = tempoContador
     console.log(tempoContador)
   } else {
-    tempoContador = 15
+    tempoContador = 30
     naoRespondida++
     processaPergunta()
     console.log('fim do tempo')
@@ -591,10 +591,10 @@ function checaResposta(resposta) {
   if(resposta === perguntaEmJogo.correta) {
     console.log('correto')
     respCorretas++
-    tempoContador = 15
+    tempoContador = 30
   } else {
     respErradas++
-    tempoContador = 15
+    tempoContador = 30
     console.log('errada')
   }
   if(respCorretas > 15) {
