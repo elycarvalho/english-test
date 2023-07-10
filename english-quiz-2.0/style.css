@@ -1,0 +1,235 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: arial, Helvetica, sans-serif;
+}
+
+body{
+	background-image: radial-gradient(#340383, #000);
+}
+
+main{
+	width: 100%;
+	position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+
+.tela-inicial{
+	margin-top: 20px;
+	font-size: 1.7rem;
+	color: #fff;
+	position: absolute;
+    width: 83%;
+	height: 450px;
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+	align-items: center;
+	background-color: blue;
+	border-radius: 20px;
+	z-index: 1;
+	border-top-color: #D6400C;
+}
+
+.tela-inicial h3{
+	padding: 10px 10px;
+    border: 3px solid red;
+    color: blue;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.categorias{
+    width: 200px;
+    height: 35px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.nome-jogador{
+	text-align: center;
+	font-size: 1.5rem;
+	width: 35%;
+	height: 45px;
+}
+
+.container-jogo{
+	width: 100%;
+	height: 500px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.modal-msg{
+    width: 50%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid #92722F;
+    background-color: #C1D435;
+}
+
+.mensagem{
+	text-align: center;
+	font-size: 1.5rem;
+}
+
+.pergunta{
+	font-weight: bold;
+	width: 80%;
+	height: 75px;
+	padding: 20px 3px;
+	color: #fff;
+	text-align: center;
+    border: 2px solid #CFB32B;
+    border-radius: 13px;
+    background-image: radial-gradient(#1B519E, #220C7C);
+}
+
+.qtde-respostas{
+	color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    width: 70%;
+    height: 30px;
+}
+
+.qtde-corretas, .qtde-erradas, .nao-respondidas{
+	color: #000;
+	margin-right: 15px;
+	width: 35px;
+	text-align: center;
+	padding-top: 4px;
+	border: 1px solid #1B519E;
+	border-radius: 5px;
+	background-color: aliceblue;
+}
+
+.mostra-contador{
+	font-weight: bold;
+	font-size: 25px;
+	padding-top: 10px;
+	text-align: center;
+	color: #fff;
+    width: 55px;
+    height: 55px;
+    border: 2px solid #CFB32B; 
+    border-radius: 50%;
+    background-color: #1C7D22;
+}
+
+.container-opcoes{
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+	width: 80%;
+	height: 82px;
+}
+
+.upper-line{
+	width: 100%;
+	position: relative;
+	z-index: -1;
+	top: 14%;
+	border: 1px solid #CFB32B;
+}
+
+.lower-line{
+	width: 100%;
+	position: relative;
+	z-index: -1;
+	bottom: 13%;
+	border: 1px solid #CFB32B;
+}
+
+.opcoes{
+	cursor: pointer;
+	padding-top: 8px;
+	width: 50%;
+	height: 48px;
+	text-align: center;
+	color: #fff;
+	background-image: radial-gradient(#1B359E, #1B519E);
+	border: 2px solid #CFB32B;
+	border-radius: 12px;
+}
+
+.opcoes:hover{
+	color: #1B519E;
+	background-image: radial-gradient(#dedede, #fefefe)
+}
+
+.tela-final{
+	margin-top: 20px;
+	position: absolute;
+	z-index: 1;
+	width: 85%;
+	height: 440px;
+	background-image: linear-gradient(#1985FE, #1DBBC6);
+	display: none;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	border-radius: 20px;
+	box-shadow: #000 3px 3px 5px;
+}
+
+.msg-final{
+	width: 90%;
+	height: 50px;
+}
+
+.btn-comecar{
+	font-weight: bold;
+	border: none;
+	box-shadow: 2px 2px 8px #000;
+	background-color: red;
+	color: #fff;
+	border-radius: 10px;
+	font-size: 1.1rem;
+	letter-spacing: 2px;
+	width: 196px;
+	height: 35px;
+}
+
+.porcentagem{
+	font-size: 1.4rem;
+}
+
+.btn-reiniciar{
+    width: 196px;
+	height: 40px;
+	border: none;
+	background-color: #baff4b;
+	border-radius: 10px;
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+
+@media(max-width: 756px){
+	.tela-inicial, .tela-final{
+		margin-top: 10px;
+		width: 95%;
+	}
+	.container-opcoes{
+		width: 95%;
+		height: 230px;
+	}
+	.opcoes{
+		width: 100%;
+
+	}
+	.pergunta{
+		width: 95%;
+	}
+	hr{
+		display: none;
+	}
+}
