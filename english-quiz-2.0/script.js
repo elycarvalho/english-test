@@ -147,7 +147,7 @@ let basico = [
     correta: "A"
   }, 
   {
-    pergs: `O que está dizendo neste audio?:<button onclick="ouvir('you are welcome')">ouvir</button>`,
+    pergs: `O que está dizendo neste audio?:<button onclick="ouvir('you are welcome')">&#128266;</button>`,
     opcaoA: "you are welcome",
     opcaoB: "you are welton",
     opcaoC: "your are well done",
@@ -278,7 +278,7 @@ let intermediario = [
     correta: "A"
   },
   {
-    pergs: `O que está dizendo neste audio?: <button onclick="ouvir('could you bring me a coffee, please?')">ouvir</button>`,
+    pergs: `O que está dizendo neste audio?: <button onclick="ouvir('could you bring me a coffee, please?')">&#128266;</button>`,
     opcaoA: "cold wind means a lot here?",
     opcaoB: "could you bring me a coffee, please?",
     opcaoC: "could you bring me a clock piece?",
@@ -409,7 +409,7 @@ let avancado = [
     correta: "A"
   },
   {
-    pergs: `O que está dizendo neste audio?: <button onclick="ouvir('a unicorn is a horse with a horn')">ouvir</button>`,
+    pergs: `O que está dizendo neste audio?: <button onclick="ouvir('a unicorn is a horse with a horn')">&#128266;</button>`,
     opcaoA: "a union form is horn in a horse",
     opcaoB: "are you informed there's a hord with a rod?",
     opcaoC: "a uniform is hot without a form",
@@ -540,7 +540,7 @@ let fluente = [
     correta: "A"
   },
   {
-    pergs: `O que está dizendo neste audio?: <button onclick="ouvir('seventy seven benevolent elephants')">ouvir</button>`,
+    pergs: `O que está dizendo neste audio?: <button onclick="ouvir('seventy seven benevolent elephants')">&#128266;</button>`,
     opcaoA: "said what you said involved elephants.",
     opcaoB: "seven teens seven bad elements elephants.",
     opcaoC: "seventy seven benevolent elephants.",
