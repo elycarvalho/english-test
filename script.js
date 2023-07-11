@@ -14,7 +14,6 @@ const naoRespondFinal = document.querySelector('.nao-respond-final')
 let respCorretas = 0
 let respErradas  = 0
 let naoRespondida = 0
-const mensagem = document.querySelector(".mensagem")
 const telaFinal = document.querySelector(".tela-final")
 const msgFinal = document.querySelector(".msg-final")
 const porcentagem = document.querySelector(".porcentagem")
@@ -146,6 +145,22 @@ let basico = [
     opcaoC: "how are you from?",
     opcaoD: "were is our from?",
     correta: "A"
+  }, 
+  {
+    pergs: `O que está dizendo neste audio?:<button onclick="ouvir('you are welcome')">&#128266;</button>`,
+    opcaoA: "you are welcome",
+    opcaoB: "you are welton",
+    opcaoC: "your are well done",
+    opcaoD: "your are weak come on",
+    correta: "A"
+  }, 
+  {
+    pergs: `O que está dizendo neste audio?:<button onclick="ouvir('I am from mars')">&#128266;</button>`,
+    opcaoA: "I am from mars.",
+    opcaoB: "I am not mad.",
+    opcaoC: "I am for march.",
+    opcaoD: "I am formats.",
+    correta: "A"
   } 
 ]
 
@@ -269,7 +284,23 @@ let intermediario = [
     opcaoC: " do you let me one",
     opcaoD: " are you coming, please",
     correta: "A"
-  } 
+  },
+  {
+    pergs: `O que está dizendo neste audio?: <button onclick="ouvir('could you bring me a coffee, please?')">&#128266;</button>`,
+    opcaoA: "cold wind means a lot here?",
+    opcaoB: "could you bring me a coffee, please?",
+    opcaoC: "could you bring me a clock piece?",
+    opcaoD: "could you bring more love and peace?",
+    correta: "B"
+  },
+  {
+    pergs: `O que está dizendo neste audio?: <button onclick="ouvir('I know the rules')">&#128266;</button>`,
+    opcaoA: "I all day ruined.",
+    opcaoB: "I know the rules.",
+    opcaoC: "I know they ruled.",
+    opcaoD: "I'm on the route.",
+    correta: "B"
+  }  
 ]
 
 let avancado = [
@@ -392,6 +423,22 @@ let avancado = [
     opcaoC: "The person, which is standing over there, is my sister.",
     opcaoD: "The car, whom I bought yesterday, is blue.",
     correta: "A"
+  },
+  {
+    pergs: `O que está dizendo neste audio?: <button onclick="ouvir('a unicorn is a horse with a horn')">&#128266;</button>`,
+    opcaoA: "a union form is horn in a horse",
+    opcaoB: "are you informed there's a hord with a rod?",
+    opcaoC: "a uniform is hot without a form",
+    opcaoD: "a unicorn is a horse with a horn.",
+    correta: "D"
+  }, 
+  {
+    pergs: `O que está dizendo neste audio?: <button onclick="ouvir('through night and day')">&#128266;</button>`,
+    opcaoA: "throw nine in may",
+    opcaoB: "through night and day.",
+    opcaoC: "true knight at day.",
+    opcaoD: "throw out and pray.",
+    correta: "B"
   } 
 ]
 
@@ -515,6 +562,22 @@ let fluente = [
     opcaoC: "I would have say",
     opcaoD: "I would say",
     correta: "A"
+  },
+  {
+    pergs: `O que está dizendo neste audio?: <button onclick="ouvir('seventy seven benevolent elephants')">&#128266;</button>`,
+    opcaoA: "said what you said involved elephants.",
+    opcaoB: "seven teens seven bad elements elephants.",
+    opcaoC: "seventy seven benevolent elephants.",
+    opcaoD: "sever the servant benevolent elephants.",
+    correta: "C"
+  }, 
+  {
+    pergs: `O que está dizendo neste audio?: <button onclick="ouvir('all day long he complained')">&#128266;</button>`,
+    opcaoA: "all alone he complained.",
+    opcaoB: "all day long he complained.",
+    opcaoC: "all the loan he can play.",
+    opcaoD: "all the love he come give.",
+    correta: "B"
   } 
 ]
 
@@ -546,7 +609,7 @@ function processaPergunta() {
     }
 
   console.log('respondidas ' + respondidas)
-	if(respondidas < 15) {
+	if(respondidas < 17) {
     
 		perguntaEmJogo = bancoPerguntas[respondidas]
     pergunta.innerHTML = perguntaEmJogo.pergs
@@ -567,17 +630,39 @@ function criaTelaFinal(){
   erradasFinal.innerHTML = `Erros: ${respErradas}`
   corretasFinal.innerHTML = `Acertos: ${respCorretas}`
   naoRespondFinal.innerHTML = `Sem respostas: ${naoRespondida}`
-  let porcento = Math.round((respCorretas / 15) * 100)
+  let porcento = Math.round((respCorretas / 17) * 100)
   porcentagem.innerHTML = `${porcento}%`
-  console.log('porcento' + porcento)
-  
+  let mensagem = ''
+  if(porcento <= 40){
+    mensagem = 'Seu resultado foi muito baixo, continue estudando!'
+  }  
+  if(porcento > 40 && porcento <= 60){
+    mensagem = 'Seu resultado foi médio, ainda precisa estudar mais!'
+  }
+  if(porcento > 60 && porcento <= 80){
+    mensagem = 'Muito bem, sua pontução foi boa, mas pode melhorar ainda mais!'
+  }
+  if(porcento > 80 && porcento <= 98){
+    mensagem = 'Parabéns! Sua pontução foi ótima!'
+  }
+  if(porcento === 100 && bancoPerguntas === 'fluente'){
+    mensagem = 'Congrats! You nailed it!'
+  }
+  if(porcento === 100 && bancoPerguntas === 'basico'){
+    mensagem = 'Parabéns pela pontução máxima, agora tente fazer os testes mais avançados!'
+  }
+  msgFinal.innerHTML = mensagem
 }
 
 function contador() {
+  if(tempoContador > 0 && tempoContador <= 10){
+    mostraContador.style.backgroundColor = '#BC1700'
+  }else{
+    mostraContador.style.backgroundColor = '#1C7D22'
+  }
   if(tempoContador > 0) {
     tempoContador--
     mostraContador.innerHTML = tempoContador
-    console.log(tempoContador)
   } else {
     tempoContador = 30
     naoRespondida++
@@ -597,7 +682,7 @@ function checaResposta(resposta) {
     tempoContador = 30
     console.log('errada')
   }
-  if(respCorretas > 15) {
+  if(respCorretas > 17) {
     respCorretas = 0
   }
   processaPergunta()
@@ -607,5 +692,15 @@ btnReiniciar.addEventListener('click', () => {
   location.reload()
   }
 )
+
+function ouvir(e) {
+  let wordToSay = new SpeechSynthesisUtterance()
+    console.log(e)
+    wordToSay.text = e
+    wordToSay.lang = 'en'
+    wordToSay.rate = 0.8
+    wordToSay.volume = 1
+    window.speechSynthesis.speak(wordToSay)
+}
 
 
