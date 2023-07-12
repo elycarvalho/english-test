@@ -21,11 +21,19 @@ const porcentagem = document.querySelector(".porcentagem")
 const btnReiniciar = document.querySelector(".btn-reiniciar")
 let respondidas = 0
 let perguntaEmJogo = ''
-let tempoContador = 30
+let tempoContador = 35
 
 let bancoPerguntas = []
 
 let basico = [
+  {
+    pergs: 'qual é o plural de child?',
+    opcaoA: "childs",
+    opcaoB: "childes",
+    opcaoC: "childies",
+    opcaoD: "children",
+    correta: "D"
+  },
   {
   	pergs: 'Como se diz estou com fome em inglês?',
   	opcaoA: "I am hungary",
@@ -147,7 +155,7 @@ let basico = [
     correta: "A"
   }, 
   {
-    pergs: `O que está dizendo neste audio?:<button onclick="ouvir('you are welcome')">&#128266;</button>`,
+    pergs: `O que está dizendo neste audio? <button onclick="ouvir('you are welcome')">&#128266;</button>`,
     opcaoA: "you are welcome",
     opcaoB: "you are welton",
     opcaoC: "your are well done",
@@ -155,16 +163,24 @@ let basico = [
     correta: "A"
   }, 
   {
-    pergs: `O que está dizendo neste audio?:<button onclick="ouvir('I am from mars')">&#128266;</button>`,
-    opcaoA: "I am from mars.",
-    opcaoB: "I am not mad.",
-    opcaoC: "I am for march.",
-    opcaoD: "I am formats.",
-    correta: "A"
+    pergs: `O que está dizendo neste audio? <button onclick="ouvir('my mother is a doctor')">&#128266;</button>`,
+    opcaoA: "my madder is a daughter",
+    opcaoB: "my mother is a doctor",
+    opcaoC: "my mother is a dodger",
+    opcaoD: "may modern is a dog term",
+    correta: "B"
   } 
 ]
 
 let intermediario = [
+  {
+    pergs: "O que significa a sigla ASAP?",
+    opcaoA: " a song and a poetry.",
+    opcaoB: " as sad as a sinner.",
+    opcaoC: " as soon as possible.",
+    opcaoD: " a super application.",
+    correta: "C"
+  }, 
   {
   	pergs: "Qual frase está no simple past tense?",
   	opcaoA: " I am eating dinner.",
@@ -234,7 +250,7 @@ let intermediario = [
   	opcaoA: "an arm",
   	opcaoB: "a nose",
   	opcaoC: "a hand",
-  	opcaoD: "resposta",
+  	opcaoD: "a pen",
   	correta: "C"
   },  
   {
@@ -275,7 +291,7 @@ let intermediario = [
     opcaoB: "newbie",
     opcaoC: "difficult",
     opcaoD: "rookie",
-    correta: "C"
+    correta: "A"
   },  
   {
     pergs:  "(complete a frase) I would like a cup of tea, ________?",
@@ -286,24 +302,32 @@ let intermediario = [
     correta: "A"
   },
   {
-    pergs: `O que está dizendo neste audio?: <button onclick="ouvir('could you bring me a coffee, please?')">&#128266;</button>`,
+    pergs: `O que está dizendo neste audio? <button onclick="ouvir('could you bring me a coffee, please?')">&#128266;</button>`,
     opcaoA: "cold wind means a lot here?",
     opcaoB: "could you bring me a coffee, please?",
     opcaoC: "could you bring me a clock piece?",
     opcaoD: "could you bring more love and peace?",
     correta: "B"
-  },
+  }, 
   {
-    pergs: `O que está dizendo neste audio?: <button onclick="ouvir('I know the rules')">&#128266;</button>`,
-    opcaoA: "I all day ruined.",
-    opcaoB: "I know the rules.",
-    opcaoC: "I know they ruled.",
-    opcaoD: "I'm on the route.",
-    correta: "B"
-  }  
+    pergs: `O que está dizendo neste audio? <button onclick="ouvir('he was tired yesterday')">&#128266;</button>`,
+    opcaoA: "he was fired yesterday",
+    opcaoB: "he was admired yesterday",
+    opcaoC: "he was tired yesterday",
+    opcaoD: "he won tiles, yes today",
+    correta: "C"
+  } 
 ]
 
 let avancado = [
+  {
+    pergs: "(complete) she _________ to music every day",
+    opcaoA: " listen.",
+    opcaoB: " listens.",
+    opcaoC: " hear.",
+    opcaoD: " ears.",
+    correta: "lists."
+  },  
   {
   	pergs: "qual frase está na forma condicional correta?",
   	opcaoA: " If I will see her, I will say hello.",
@@ -337,7 +361,7 @@ let avancado = [
   	correta: "D"
   },  
   {
-  	pergs: 'qual a forma correta do verbo "to go" present perfect tense, para "we"?',
+  	pergs: 'qual a forma correta do verbo "to go" no present perfect tense, para "we"?',
   	opcaoA: "we have gone",
   	opcaoB: "went",
   	opcaoC: "has went",
@@ -425,7 +449,7 @@ let avancado = [
     correta: "A"
   },
   {
-    pergs: `O que está dizendo neste audio?: <button onclick="ouvir('a unicorn is a horse with a horn')">&#128266;</button>`,
+    pergs: `O que está dizendo neste audio? <button onclick="ouvir('a unicorn is a horse with a horn')">&#128266;</button>`,
     opcaoA: "a union form is horn in a horse",
     opcaoB: "are you informed there's a hord with a rod?",
     opcaoC: "a uniform is hot without a form",
@@ -433,12 +457,12 @@ let avancado = [
     correta: "D"
   }, 
   {
-    pergs: `O que está dizendo neste audio?: <button onclick="ouvir('through night and day')">&#128266;</button>`,
-    opcaoA: "throw nine in may",
-    opcaoB: "through night and day.",
-    opcaoC: "true knight at day.",
-    opcaoD: "throw out and pray.",
-    correta: "B"
+    pergs: `O que está dizendo neste audio? <button onclick="ouvir('she broke her left arm')">&#128266;</button>`,
+    opcaoA: "she's broken and laugh out",
+    opcaoB: "sheep broke herd art",
+    opcaoC: "she broke her left arm",
+    opcaoD: "she broke her last farm.",
+    correta: "C"
   } 
 ]
 
@@ -450,6 +474,14 @@ let fluente = [
   	opcaoC: "runned",
   	opcaoD: "running",
   	correta: "A"
+  },  
+  {
+    pergs: 'O que significa o termo em inglês "intrinsic motivation"?',
+    opcaoA: "Uma abordagem de ensino que enfatiza a aprendizagem ativa.",
+    opcaoB: "Motivação interna que vem de interesses pessoais e satisfação interna.",
+    opcaoC: "Motivação externa baseada em recompensas materiais.",
+    opcaoD: "Um tipo de treinamento mental para o aumento da concentração.",
+    correta: "B"
   },  
   {
   	pergs: 'Which sentence is in the Gerund form?',
@@ -526,7 +558,7 @@ let fluente = [
   {
     pergs: "'he's pretending to be rich, that's why he's wearing that costume.' means...",
     opcaoA: "ele está pretendendo ser rico, por isso está adotando esse costume.",
-    opcaoB: "ele está fingindo ser rico, e por isso que ele está vestindo aquela fantasia.",
+    opcaoB: "ele está fingindo ser rico, é por isso que ele está vestindo aquela fantasia.",
     opcaoC: "ele pretende ser rico, por isso está se acostumando a se vestir assim.",
     opcaoD: "ele se finge de rico porque ele costuma vestir uma fantasia.",
     correta: "B"
@@ -540,7 +572,7 @@ let fluente = [
     correta: "A"
   },  
   {
-    pergs: 'If I had known the answer, ________ it.',
+    pergs: 'which sentence is correct?.',
     opcaoA: "If I would win the lottery, I will buy a mansion.",
     opcaoB: "If I would win the lottery, I would buy a mansion.",
     opcaoC: "If I win the lottery, I would buy a mansion.",
@@ -564,19 +596,19 @@ let fluente = [
     correta: "A"
   },
   {
-    pergs: `O que está dizendo neste audio?: <button onclick="ouvir('seventy seven benevolent elephants')">&#128266;</button>`,
+    pergs: `O que está dizendo neste audio? <button onclick="ouvir('seventy seven benevolent elephants')">&#128266;</button>`,
     opcaoA: "said what you said involved elephants.",
     opcaoB: "seven teens seven bad elements elephants.",
     opcaoC: "seventy seven benevolent elephants.",
     opcaoD: "sever the servant benevolent elephants.",
     correta: "C"
-  }, 
+  },
   {
-    pergs: `O que está dizendo neste audio?: <button onclick="ouvir('all day long he complained')">&#128266;</button>`,
-    opcaoA: "all alone he complained.",
-    opcaoB: "all day long he complained.",
-    opcaoC: "all the loan he can play.",
-    opcaoD: "all the love he come give.",
+    pergs: `O que está dizendo neste audio? <button onclick="ouvir('the colonel is yelling at the lieutenant')">&#128266;</button>`,
+    opcaoA: "the kernel is selling a antenna.",
+    opcaoB: "the colonel is yelling at the lieutenant.",
+    opcaoC: "the  coronel is telling to the lieutenant.",
+    opcaoD: "the kernel is testing the antenna.",
     correta: "B"
   } 
 ]
@@ -609,7 +641,7 @@ function processaPergunta() {
     }
 
   console.log('respondidas ' + respondidas)
-	if(respondidas < 17) {
+	if(respondidas < 18) {
     
 		perguntaEmJogo = bancoPerguntas[respondidas]
     pergunta.innerHTML = perguntaEmJogo.pergs
@@ -630,7 +662,7 @@ function criaTelaFinal(){
   erradasFinal.innerHTML = `Erros: ${respErradas}`
   corretasFinal.innerHTML = `Acertos: ${respCorretas}`
   naoRespondFinal.innerHTML = `Sem respostas: ${naoRespondida}`
-  let porcento = Math.round((respCorretas / 17) * 100)
+  let porcento = Math.round((respCorretas / 18) * 100)
   porcentagem.innerHTML = `${porcento}%`
   let mensagem = ''
   if(porcento <= 40){
@@ -645,10 +677,10 @@ function criaTelaFinal(){
   if(porcento > 80 && porcento <= 98){
     mensagem = 'Parabéns! Sua pontução foi ótima!'
   }
-  if(porcento === 100 && bancoPerguntas === 'fluente'){
+  if(porcento === 100 && categorias.value === 'fluente'){
     mensagem = 'Congrats! You nailed it!'
   }
-  if(porcento === 100 && bancoPerguntas === 'basico'){
+  if(porcento === 100 && categorias.value === 'basico'){
     mensagem = 'Parabéns pela pontução máxima, agora tente fazer os testes mais avançados!'
   }
   msgFinal.innerHTML = mensagem
@@ -664,25 +696,22 @@ function contador() {
     tempoContador--
     mostraContador.innerHTML = tempoContador
   } else {
-    tempoContador = 30
+    tempoContador = 35
     naoRespondida++
     processaPergunta()
-    console.log('fim do tempo')
   }
 
 }
 
 function checaResposta(resposta) {
   if(resposta === perguntaEmJogo.correta) {
-    console.log('correto')
     respCorretas++
-    tempoContador = 30
+    tempoContador = 35
   } else {
     respErradas++
-    tempoContador = 30
-    console.log('errada')
+    tempoContador = 35
   }
-  if(respCorretas > 17) {
+  if(respCorretas > 18) {
     respCorretas = 0
   }
   processaPergunta()

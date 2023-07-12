@@ -18,12 +18,12 @@ main{
 
 
 .tela-inicial{
-	margin-top: 20px;
+	margin-top: 22px;
 	font-size: 1.7rem;
 	color: #fff;
 	position: absolute;
     width: 83%;
-	height: 450px;
+	height: 452px;
 	display: flex;
 	justify-content: space-around;
 	flex-direction: column;
@@ -83,13 +83,20 @@ main{
 .pergunta{
 	font-weight: bold;
 	width: 80%;
-	height: 75px;
+	height: 80px;
 	padding: 20px 3px;
 	color: #fff;
 	text-align: center;
     border: 2px solid #CFB32B;
     border-radius: 13px;
     background-image: radial-gradient(#1B519E, #220C7C);
+}
+
+.pergunta button{
+    border: none;
+    background: none;
+    margin-left: 5px;
+    font-size: 1.5rem;
 }
 
 .qtde-respostas{
@@ -166,7 +173,7 @@ main{
 	position: absolute;
 	z-index: 1;
 	width: 85%;
-	height: 440px;
+	height: 450px;
 	background-image: linear-gradient(#1985FE, #1DBBC6);
 	display: none;
 	flex-direction: column;
@@ -177,6 +184,7 @@ main{
 }
 
 .msg-final{
+	text-align: center;
 	width: 90%;
 	height: 50px;
 }
@@ -195,6 +203,7 @@ main{
 }
 
 .porcentagem{
+	font-weight: bold;
 	font-size: 1.4rem;
 }
 
