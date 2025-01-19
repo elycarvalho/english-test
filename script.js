@@ -21,597 +21,501 @@ const porcentagem = document.querySelector(".porcentagem")
 const btnReiniciar = document.querySelector(".btn-reiniciar")
 let respondidas = 0
 let perguntaEmJogo = ''
-let tempoContador = 35
+let tempoContador = 60
 
 let bancoPerguntas = []
 
-let basico = [
-  {
-    pergs: 'qual é o plural de child?',
-    opcaoA: "childs",
-    opcaoB: "childes",
-    opcaoC: "childies",
-    opcaoD: "children",
-    correta: "D"
+let nivelA = [
+  { 
+  pergs: "Complete com a forma correta do verbo to be: She ___ a doctor",
+  opcaoA: " am",
+  opcaoB: " is",
+  opcaoC: " are",
+  opcaoD: " been",
+  correta: "B",
+  },
+  { 
+  pergs: "Escolha a opção correta para formar uma pergunta: ___ you like pizza?",
+  opcaoA: " Do",
+  opcaoB: " Does",
+  opcaoC: " Is",
+  opcaoD: " are",
+  correta: "A",
   },
   {
-  	pergs: 'Como se diz estou com fome em inglês?',
-  	opcaoA: "I am hungary",
-  	opcaoB: "I am famine",
-  	opcaoC: "I am angry",
-  	opcaoD: "I am hungry",
-    correta: "D"
-  },  
-  {
-  	pergs: "Como se diz 'obrigado' em inglês?",
-  	opcaoA: "Tank you",
-  	opcaoB: "Think you",
-  	opcaoC: "Thank you",
-  	opcaoD: "Ten kyu",
-  	correta: "C"
-  },  
-  {
-  	pergs: "O que significa 'book'?",
-  	opcaoA: "boca",
-  	opcaoB: "bala",
-  	opcaoC: "livro",
-  	opcaoD: "boi",
-  	correta: "C"
-  },  
-  {
-  	pergs: "Como se diz 'eu gosto de música' em inglês",
-  	opcaoA: "I am music",
-  	opcaoB: "I guest music",
-  	opcaoC: "I music laike",
-  	opcaoD: "I like music",
-  	correta: "D"
-  },  
-  {
-  	pergs: "Como perguntar 'você é um estudante'?",
-  	opcaoA: "Are you a student?",
-  	opcaoB: "You are a student?",
-  	opcaoC: "You is a student?",
-  	opcaoD: "Do you are a student?",
-  	correta: "A"
-  },  
-  {
-  	pergs: "O que significa a palavra 'body'?",
-  	opcaoA: "bode",
-  	opcaoB: "corpo",
-  	opcaoC: "mal",
-  	opcaoD: "cama",
-  	correta: "B"
-  },  
-  {
-  	pergs: "qual o contrário de 'hot'?",
-  	opcaoA: "cold",
-  	opcaoB: "hat",
-  	opcaoC: "big",
-  	opcaoD: "beautiful",
-  	correta: "A"
-  },  
-  {
-  	pergs: "como se diz 'eu tenho 18 anos' em inglês?",
-  	opcaoA: "I have 18 years",
-  	opcaoB: "I am old 18 years",
-  	opcaoC: "I have 18 years old",
-  	opcaoD: "I am 18 years old",
-  	correta: "D"
-  },  
-  {
-  	pergs: "O que significa a expressão I'm sorry?",
-  	opcaoA: "bom dia",
-  	opcaoB: "de nada",
-  	opcaoC: "me desculpe",
-  	opcaoD: "obrigado",
-  	correta: "C"
-  },  
-  {
-  	pergs: 'como se diz "amigo" em inglês?',
-  	opcaoA: "friend",
-  	opcaoB: "french",
-  	opcaoC: "frozen",
-  	opcaoD: "frisby",
-  	correta: "A"
+  pergs: "Escolha o tempo verbal correto: Yesterday, he ___ to the park.",
+  opcaoA: " go",
+  opcaoB: " goes",
+  opcaoC: " went",
+  opcaoD: " was",
+  correta: "C",
   },
   {
-    pergs: "como se diz 'bom dia' em inglês?",
-    opcaoA: "good daily",
-    opcaoB: "good morning",
-    opcaoC: "good warning",
-    opcaoD: "good evening",
-    correta: "B"
-  },  
+  pergs: "Complete com a preposição correta: The book is ___ the table.",
+  opcaoA: " on",
+  opcaoB: " in",
+  opcaoC: " at",
+  opcaoD: " over",
+  correta: "A",
+  },
   {
-    pergs: 'como dizer "eu não entendo" em inglês?',
-    opcaoA: "I don't understand",
-    opcaoB: "I don't remember",
-    opcaoC: "I not stand",
-    opcaoD: "I don't forget",
-    correta: "A"
-  },  
+  pergs: "Escolha a forma negativa correta: They ___ playing football now.",
+  opcaoA: " is not",
+  opcaoB: " are not",
+  opcaoC: " do not",
+  opcaoD: " not are",
+  correta: "B",
+  },
   {
-    pergs: "Como se pergunta o nome de uma pessoa em inglês?",
-    opcaoA: "come is soul name?",
-    opcaoB: "how are you name?",
-    opcaoC: "what are you name?",
-    opcaoD: "what's your name?",
-    correta: "D"
-  },  
+  pergs: 'Qual é o significado de "apple"?',
+  opcaoA: " Uva",
+  opcaoB: " Banana",
+  opcaoC: "Maçã",
+  opcaoD: " Pêra",
+  correta: "C",
+  },
   {
-    pergs: 'como perguntar a idade de alguém?',
-    opcaoA: "how many years do you have?",
-    opcaoB: "how much ears are you?",
-    opcaoC: "how old are you?",
-    opcaoD: "what's your years?",
-    correta: "C"
-  },  
+  pergs: "Escolha a palavra que completa a frase: I have a _____ of bread.",
+  opcaoA: " bottle",
+  opcaoB: " piece",
+  opcaoC: " slice",
+  opcaoD: " part",
+  correta: "C",
+  },
   {
-    pergs: 'como perguntar "de onde você é"?',
-    opcaoA: "where are you from?",
-    opcaoB: "of where you are?",
-    opcaoC: "how are you from?",
-    opcaoD: "were is our from?",
-    correta: "A"
-  }, 
+  pergs: "Qual das opções é um meio de transporte?",
+  opcaoA: "comb ",
+  opcaoB: " Table",
+  opcaoC: " Book",
+  opcaoD: "Car ",
+  correta: "D",
+  },
   {
-    pergs: `O que está dizendo neste audio? <button onclick="ouvir('you are welcome')">&#128266;</button>`,
-    opcaoA: "you are welcome",
-    opcaoB: "you are welton",
-    opcaoC: "your are well done",
-    opcaoD: "your are weak come on",
-    correta: "A"
-  }, 
+  pergs: 'Escolha a opção correta para "roupa de inverno":',
+  opcaoA: " Coat",
+  opcaoB: " Shirt",
+  opcaoC: " Shorts",
+  opcaoD: " underpants",
+  correta: "A",
+  },
   {
-    pergs: `O que está dizendo neste audio? <button onclick="ouvir('my mother is a doctor')">&#128266;</button>`,
-    opcaoA: "my madder is a daughter",
-    opcaoB: "my mother is a doctor",
-    opcaoC: "my mother is a dodger",
-    opcaoD: "may modern is a dog term",
-    correta: "B"
-  } 
+  pergs: "Qual das palavras é um animal?",
+  opcaoA: "Window ",
+  opcaoB: " Chair",
+  opcaoC: "Dog ",
+  opcaoD: " razor",
+  correta: "C",
+  },
+  {
+  pergs: "Complete a frase: I ___ to school every day.",
+  opcaoA: " go",
+  opcaoB: " goes",
+  opcaoC: " went",
+  opcaoD: " am",
+  correta: "A",
+  },
+  {
+  pergs: "Escolha a frase que está no passado:",
+  opcaoA: " She eats pizza.",
+  opcaoB: " She ate pizza.",
+  opcaoC: " She is eating pizza.",
+  opcaoD: " She will ate pizza",
+  correta: "B",
+  },
+  {
+  pergs: "Qual frase está no presente contínuo?",
+  opcaoA: " I am reading a book.",
+  opcaoB: " I read a book.",
+  opcaoC: " I will read a book.",
+  opcaoD: " I'm going to read a book",
+  correta: "A",
+  },
+  {
+  pergs: "Escolha a frase correta: There ___ many students in the classroom.",
+  opcaoA: " is",
+  opcaoB: " are",
+  opcaoC: " am",
+  opcaoD: "be",
+  correta: "B",
+  },
+  {
+  pergs: "Complete a frase com o artigo correto: This is ___ orange.",
+  opcaoA: " an",
+  opcaoB: " a",
+  opcaoC: " the",
+  opcaoD: "one",
+  correta: "A",
+  },
+  {
+  pergs: 'Como você responde à pergunta "How are you?"',
+  opcaoA: " It's sunny thanks.",
+  opcaoB: " I live in London.",
+  opcaoC: "I'm fine, thank you. ",
+  opcaoD: " I is good.",
+  correta: "C",
+  },
+  {
+  pergs:  'Escolha a resposta correta: "What time is it?"',
+  opcaoA: " It's 10 o'clock.",
+  opcaoB: " I'm fine.",
+  opcaoC: " I'm from Brazil.",
+  opcaoD: " Is 10 hours.",
+  correta: "A",
+  },
+  {
+  pergs: "Qual pergunta é usada para pedir direções?",
+  opcaoA: " Where is the bus station?",
+  opcaoB: " How are you?",
+  opcaoC: " What is your name?",
+  opcaoD: " which is there",
+  correta: "A",
+  },
+  {
+  pergs: "Complete a frase: Can I have a ___ of water, please?",
+  opcaoA: " glass",
+  opcaoB: " bread",
+  opcaoC: " book",
+  opcaoD: " cane",
+  correta: "A",
+  },
+  {
+  pergs: 'Qual é a forma educada de pedir algo? "___ I have the menu, please?"',
+  opcaoA: "say ",
+  opcaoB: " Do",
+  opcaoC: " Is",
+  opcaoD: "Can ",
+  correta: "D",
+  }
 ]
 
-let intermediario = [
+let nivelB = [
   {
-    pergs: "O que significa a sigla ASAP?",
-    opcaoA: " a song and a poetry.",
-    opcaoB: " as sad as a sinner.",
-    opcaoC: " as soon as possible.",
-    opcaoD: " a super application.",
-    correta: "C"
-  }, 
-  {
-  	pergs: "Qual frase está no simple past tense?",
-  	opcaoA: " I am eating dinner.",
-    opcaoB: " She will go to the store.",
-    opcaoC: " They played soccer yesterday.",
-    opcaoD: " We are going to the park.",
-  	correta: "C"
-  },  
-  {
-  	pergs: 'A tradução de "Could you please repeat that?" é...',
-  	opcaoA: " Eu não entendo.",
-    opcaoB: " Você poderia repetir, por favor?",
-    opcaoC: " Eu não concordo.",
-    opcaoD: " O que você está fazendo?",
-  	correta: "B"
-  },  
-  {
-  	pergs: "Qual frase está correta?",
-  	opcaoA: " My sister is a nurse since five years.",
-    opcaoB: " I have been to Paris last month.",
-    opcaoC: " She has lived here for two years.",
-    opcaoD: " They didn't came to the party.",
-  	correta: "C"
-  },  
-  {
-  	pergs: 'como se diz "me desculpe" em inglês?',
-  	opcaoA: "me despiace",
-  	opcaoB: "worry me",
-  	opcaoC: "I'm fine",
-  	opcaoD: "I'm sorry",
-  	correta: "D"
-  },  
-  {
-  	pergs: 'qual a forma comparativa de "good"?',
-  	opcaoA: "better",
-  	opcaoB: "best",
-  	opcaoC: "gooder",
-  	opcaoD: "more good",
-  	correta: "A"
-  },  
-  {
-  	pergs: 'qual frase está no "present continuous tense"?',
-  	opcaoA: " I will travel to Europe next summer.",
-    opcaoB: " She sings in a choir.",
-    opcaoC: " They are studying for the exam.",
-    opcaoD: " We went to the beach yesterday.",
-  	correta: "C"
-  },  
-  {
-  	pergs: 'qual a forma correta de "I have" no past tense?',
-  	opcaoA: "I had",
-    opcaoB: "I has",
-    opcaoC: "I haven",
-    opcaoD: "I haved",
-  	correta: "A"
-  },  
-  {
-  	pergs: "(Complete a frase) I have been studying English ________ five years.",
-  	opcaoA: "since",
-  	opcaoB: "during",
-  	opcaoC: "by",
-  	opcaoD: "for",
-  	correta: "D"
-  },  
-  {
-  	pergs: "(complete a expressão idiomática) can you lend me ___________?",
-  	opcaoA: "an arm",
-  	opcaoB: "a nose",
-  	opcaoC: "a hand",
-  	opcaoD: "a pen",
-  	correta: "C"
-  },  
-  {
-  	pergs: 'qual palavra é sinônimo de "happy"?',
-  	opcaoA: "joyful",
-  	opcaoB: "sad",
-  	opcaoC: "heavy",
-  	opcaoD: "angry",
-  	correta: "A"
+  pergs: "Complete a frase com a forma correta do verbo: If I ___ more time, I would travel around the world.",
+  opcaoA: "have",
+  opcaoB: " had",
+  opcaoC: " will have",
+  opcaoD: " heavy",
+  correta: "B",
   },
   {
-    pergs:  '(complete a frase) she is taller _________ her brother.',
-    opcaoA: "that",
-    opcaoB: "than",
-    opcaoC: "more",
-    opcaoD: "beyound",
-    correta: "B"
-  },  
-  {
-    pergs: 'Choose the correct form of the verb: "I _________ TV last night."?',
-    opcaoA: "watched",
-    opcaoB: "watch",
-    opcaoC: "watches",
-    opcaoD: "watching",
-    correta: "A"
-  },  
-  {
-    pergs: 'qual frase está correta?',
-    opcaoA: " He don't like coffee.",
-    opcaoB: " They is going to the party.",
-    opcaoC: " She have two brothers.",
-    opcaoD: " We have been friends for years.",
-    correta: "D"
-  },  
-  {
-    pergs: 'qual é o contrário de "hard"?',
-    opcaoA: "easy",
-    opcaoB: "newbie",
-    opcaoC: "difficult",
-    opcaoD: "rookie",
-    correta: "A"
-  },  
-  {
-    pergs:  "(complete a frase) I would like a cup of tea, ________?",
-    opcaoA: " could you bring me one",
-    opcaoB: " can I eat one",
-    opcaoC: " do you let me one",
-    opcaoD: " are you coming, please",
-    correta: "A"
+  pergs: "Escolha a opção correta para o uso do present perfect: I ___ to Paris three times.",
+  opcaoA: " have been",
+  opcaoB: " was",
+  opcaoC: " have gone",
+  opcaoD: " had was",
+  correta: "A",
   },
   {
-    pergs: `O que está dizendo neste audio? <button onclick="ouvir('could you bring me a coffee, please?')">&#128266;</button>`,
-    opcaoA: "cold wind means a lot here?",
-    opcaoB: "could you bring me a coffee, please?",
-    opcaoC: "could you bring me a clock piece?",
-    opcaoD: "could you bring more love and peace?",
-    correta: "B"
-  }, 
+  pergs: "Qual é a frase correta no future continuous?",
+  opcaoA: " I will working tomorrow at this time.",
+  opcaoB: " I will be working tomorrow at this time.",
+  opcaoC: " I am work tomorrow at this time.",
+  opcaoD: " I will have working tomorrow at this time.",
+  correta: "B",
+  },
   {
-    pergs: `O que está dizendo neste audio? <button onclick="ouvir('he was tired yesterday')">&#128266;</button>`,
-    opcaoA: "he was fired yesterday",
-    opcaoB: "he was admired yesterday",
-    opcaoC: "he was tired yesterday",
-    opcaoD: "he won tiles, yes today",
-    correta: "C"
-  } 
+  pergs: "Complete com a forma correta: He suggested ___ to the cinema.",
+  opcaoA: " go",
+  opcaoB: " to go",
+  opcaoC: " going",
+  opcaoD: " gone",
+  correta: "C",
+  },
+  {
+  pergs: 'Escolha a opção correta para transformar em discurso indireto: "I’m tired," she said.',
+  opcaoA: " She said she is tired.",
+  opcaoB: " She said she was tired.",
+  opcaoC: " She said she were tired.",
+  opcaoD: " She said she had tired.",
+  correta: "B",
+  },
+  {
+
+  pergs: "Qual palavra completa a frase? She’s very ___ about the meeting tomorrow.",
+  opcaoA: " excited",
+  opcaoB: " exciting",
+  opcaoC: " excitement",
+  opcaoD: " exciten",
+  correta: "A",
+  },
+  {
+  pergs: 'Escolha o sinônimo de "difficult":',
+  opcaoA: " Hard",
+  opcaoB: " Simple",
+  opcaoC: " Quick",
+  opcaoD: " Heard",
+  correta: "A",
+  },
+  {
+  pergs: "Complete a frase com a expressão correta: He was late because he got ___ in traffic.",
+  opcaoA: " stuck",
+  opcaoB: " lost",
+  opcaoC: " confused",
+  opcaoD: " bottled",
+  correta: "A",
+  },
+  {
+  pergs: 'Qual das palavras significa "economizar dinheiro"?',
+  opcaoA: " Save",
+  opcaoB: " Spend",
+  opcaoC: " Waste",
+  opcaoD: " pulp",
+  correta: "A",
+  },
+  {
+  pergs: "Escolha o adjetivo que descreve uma pessoa que gosta de ajudar os outros:",
+  opcaoA: " Selfish",
+  opcaoB: " Lazy",
+  opcaoC: " Generous",
+  opcaoD: " Healer",
+  correta: "C",
+  },
+  {
+  pergs: "John has always loved the sea. He sail with his friends. O que John gosta de fazer?",
+  opcaoA: " Caminhar nas montanhas",
+  opcaoB: " Navegar no mar",
+  opcaoC: " Viajar de avião",
+  opcaoD: " Surfar",
+  correta: "B",
+  },
+  {
+  pergs: "John spends a week sailing. Por quanto tempo John costuma navegar?", 
+  opcaoA: " Um fina de semana",
+  opcaoB: " Um mês",
+  opcaoC: " Todo o verão",
+  opcaoD: "Uma semana ",
+  correta: "D",
+  },
+  {
+  pergs: '"The museum opens at 9 a.m. and closes at 5 p.m." Que horas o museu fecha?',
+  opcaoA: " Às 9 da manhã",
+  opcaoB: " Às 5 da tarde",
+  opcaoC: " Ao meio-dia",
+  opcaoD: " Às 5 da manhã",
+  correta: "B",
+  },
+  {
+  pergs: "Tickets can be purchased online or at the entrance. Como os ingressos podem ser comprados?",
+  opcaoA: " Apenas na entrada",
+  opcaoB: " Online ou na entrada",
+  opcaoC: " Apenas online",
+  opcaoD: " Online pagando entrada",
+  correta: "B",
+  },
+  {
+  pergs: "What would you do if you won the lottery?",
+  opcaoA: " I will buy a car.",
+  opcaoB: " I would buy a car.",
+  opcaoC: " I bought a car.",
+  opcaoD: " I will bye a car.",
+  correta: "B",
+  },
+  {
+  pergs: "Complete a frase: It’s important to ___ your goals if you want to succeed.",
+  opcaoA: " achieve",
+  opcaoB: " avoid",
+  opcaoC: " fail",
+  opcaoD: " make",
+  correta: "A",
+  },
+  {
+  pergs: "Qual frase expressa uma opinião?",
+  opcaoA: " I think this movie is amazing.",
+  opcaoB: " The movie started at 8 p.m.",
+  opcaoC: " She was late for the movie.",
+  opcaoD: " I hate your pont of view.",
+  correta: "A",
+  },
+  {
+  pergs: 'Escolha a pergunta correta para esta resposta: "I’ve been working here for two years."',
+  opcaoA: "How long do you work here?",
+  opcaoB: "How long have you been working here?",
+  opcaoC: "How many years you worked here?",
+  opcaoD: "How much time you work here?",
+  correta: "B",
+  },
+  {
+  pergs: "Qual frase está no modo passivo?",
+  opcaoA: " They cleaned the house yesterday.",
+  opcaoB: " The house was cleaned yesterday.",
+  opcaoC: " They are cleaning the house.",
+  opcaoD: " They found a cleaner for the house.",
+  correta: "B",
+  },
+  {
+  pergs: "Complete a frase com a opção mais adequada: We need to ___ a decision by tomorrow.",
+  opcaoA: " make",
+  opcaoB: " do",
+  opcaoC: " take",
+  opcaoD: " decide",
+  correta: "A",
+  }
 ]
 
-let avancado = [
+let nivelC = [
   {
-    pergs: "(complete) she _________ to music every day",
-    opcaoA: " listen.",
-    opcaoB: " listens.",
-    opcaoC: " hear.",
-    opcaoD: " ears.",
-    correta: "lists."
-  },  
-  {
-  	pergs: "qual frase está na forma condicional correta?",
-  	opcaoA: " If I will see her, I will say hello.",
-    opcaoB: " If I see her, I would say hello.",
-    opcaoC: " If I see her, I will say hello.",
-    opcaoD: " If I will see her, I would say hello.",
-    correta: "C"
-  },  
-  {
-  	pergs: 'o que significa a palavra "corageous"?',
-  	opcaoA: "correto",
-  	opcaoB: "corajoso",
-  	opcaoC: "paciente",
-  	opcaoD: "carinhoso",
-  	correta: "B"
-  },  
-  {
-  	pergs: "(complete a frase) It's raining heavily, I'll take ____________",
-  	opcaoA: "reindeer",
-  	opcaoB: "little shadow",
-  	opcaoC: "an umbrella",
-  	opcaoD: "guard drain",
-  	correta: "C"
-  },  
-  {
-  	pergs: 'qual frase está na "passive voice"?',
-  	opcaoA: "The teacher explained the lesson.",
-    opcaoB: "They built a new bridge.",
-    opcaoC: "She painted a beautiful picture.",
-    opcaoD: "The book was written by a famous author.",
-  	correta: "D"
-  },  
-  {
-  	pergs: 'qual a forma correta do verbo "to go" no present perfect tense, para "we"?',
-  	opcaoA: "we have gone",
-  	opcaoB: "went",
-  	opcaoC: "has went",
-  	opcaoD: "have been going",
-  	correta: "A"
-  },  
-  {
-  	pergs: 'qual palavra é o antônimo de "generous"?',
-  	opcaoA: "kind",
-  	opcaoB: "selfish",
-  	opcaoC: "polite",
-  	opcaoD: "friendly",
-  	correta: "B"
-  },  
-  {
-  	pergs: "(complete) She ________ English for many years before moving to the United States.",
-  	opcaoA: "has studied",
-  	opcaoB: "was studying",
-  	opcaoC: "studied",
-  	opcaoD: "studies",
-  	correta: "A"
-  },  
-  {
-  	pergs: 'o que significa o phrasal verb "carry out"?',
-  	opcaoA: "carregar algo para fora",
-  	opcaoB: "cancelar ou desistir de algo",
-  	opcaoC: "explorar ou investigar algo",
-  	opcaoD: "realizar ou executar algo",
-  	correta: "D"
-  },  
-  {
-  	pergs: 'o que significa a expressão "piece of cake"?',
-  	opcaoA: "um bolo delicioso",
-  	opcaoB: "uma obra prima",
-  	opcaoC: "algo fácil ou simples de fazer",
-  	opcaoD: "uma coisa frágil",
-  	correta: "C"
-  },  
-  {
-  	pergs: 'O que significa o termo "scapegoat"?',
-  	opcaoA: "bode expiatório, pessoa culpada injustamente",
-  	opcaoB: "um tipo de jogo de tabuleiro",
-  	opcaoC: "um plano de fuga",
-  	opcaoD: "um tipo de animal do deserto",
-  	correta: "A"
+  pergs: "Complete a frase com a forma correta do verbo: If I ___ known about the meeting, I would have attended.",
+  opcaoA: " have",
+  opcaoB: " had",
+  opcaoC: " would have",
+  opcaoD: " has",
+  correta: "B",
   },
   {
-    pergs: '(complete a frase) She plays the piano ________ anyone I know.',
-    opcaoA: "so good as",
-    opcaoB: "better than",
-    opcaoC: "more good as",
-    opcaoD: "the best than",
-    correta: "B"
-  },  
-  {
-    pergs: 'como fica a frase "you are good" no past perfect tense?',
-    opcaoA: "you had been good",
-    opcaoB: "you were good",
-    opcaoC: "you have been",
-    opcaoD: "you was good",
-    correta: "A"
-  },  
-  {
-    pergs: "(complete a frase) If I had studied harder, ________ the exam.",
-    opcaoA: "I would pass",
-    opcaoB: "I will pass",
-    opcaoC: "I had been passed",
-    opcaoD: "I would have passed",
-    correta: "D"
-  },  
-  {
-    pergs: 'qual o significado da expressão "get along with"?',
-    opcaoA: "levar junto com",
-    opcaoB: "concordar com",
-    opcaoC: "ter bom relacionamento com",
-    opcaoD: "dar continuidade a",
-    correta: "C"
-  },  
-  {
-    pergs: 'qual frase está usando o pronome relativo da forma correta?',
-    opcaoA: "The house, where I grew up, is in a small town.",
-    opcaoB: "The book, who I read last week, was very interesting.",
-    opcaoC: "The person, which is standing over there, is my sister.",
-    opcaoD: "The car, whom I bought yesterday, is blue.",
-    correta: "A"
+  pergs: "Escolha a opção que melhor completa a frase: By the time she arrives, we ___ the meeting.",
+  opcaoA: " will finish",
+  opcaoB: " will have finished",
+  opcaoC: " have finished",
+  opcaoD: " going to finish",
+  correta: "C",
   },
   {
-    pergs: `O que está dizendo neste audio? <button onclick="ouvir('a unicorn is a horse with a horn')">&#128266;</button>`,
-    opcaoA: "a union form is horn in a horse",
-    opcaoB: "are you informed there's a hord with a rod?",
-    opcaoC: "a uniform is hot without a form",
-    opcaoD: "a unicorn is a horse with a horn.",
-    correta: "D"
-  }, 
+  pergs: "Qual a forma correta de usar o mixed conditionals? If he ___ more careful, he wouldn't have broken the vase.",
+  opcaoA: " were",
+  opcaoB: " was",
+  opcaoC: " had been",
+  opcaoD: " has",
+  correta: "C",
+  },
   {
-    pergs: `O que está dizendo neste audio? <button onclick="ouvir('she broke her left arm')">&#128266;</button>`,
-    opcaoA: "she's broken and laugh out",
-    opcaoB: "sheep broke herd art",
-    opcaoC: "she broke her left arm",
-    opcaoD: "she broke her last farm.",
-    correta: "C"
-  } 
+  pergs: 'Complete com a forma correta do verbo: I wish I ___ more time to study for the exam.',
+  opcaoA: " have",
+  opcaoB: " had",
+  opcaoC: " would have",
+  opcaoD: " has",
+  correta: "B",
+  },
+  {
+  pergs: "Escolha a alternativa que apresenta a forma correta do verbo no futuro perfeito: By next year, they ________ the project.",
+  opcaoA: " complete",
+  opcaoB: " will complete",
+  opcaoC: " will have completed",
+  opcaoD: " going complete",
+  correta: "C",
+  },
+  {
+  pergs: 'Qual é o sinônimo de "mitigate"?',
+  opcaoA: " Increase",
+  opcaoB: " Alleviate",
+  opcaoC: " Exacerbate",
+  opcaoD: " open",
+  correta: "B",
+  },
+  {
+  pergs: "Complete com o vocabulário mais apropriado: The scientist's ___ research led to groundbreaking discoveries in medicine.",
+  opcaoA: " superficial",
+  opcaoB: " shallow",
+  opcaoC: " profound",
+  opcaoD: " soft",
+  correta: "C",
+  },
+  {
+  pergs: 'Qual palavra melhor completa esta frase? The manager is quite ___ when it comes to making decisions.',
+  opcaoA: " indecisive",
+  opcaoB: " assertive",
+  opcaoC: " tentative",
+  opcaoD: " believer",
+  correta: "B",
+  },
+  {
+  pergs: 'Qual expressão é sinônima de "in the long run"?',
+  opcaoA: " Ultimately",
+  opcaoB: " Now and then",
+  opcaoC: " In the short term",
+  opcaoD: " running fast",
+  correta: "A",
+  },
+  {
+  pergs: 'Qual das palavras significa "reconhecimento público ou aprovação"?',
+  opcaoA: " Disregard",
+  opcaoB: " Acknowledgment",
+  opcaoC: " Reprimand",
+  opcaoD: " Reckon",
+  correta: "B",
+  },
+  {
+  pergs: '"This phenomenon has garnered widespread attention." Qual a tradução correta desta frase?',
+  opcaoA: " Este fantasma gosta de muita atenção",
+  opcaoB: " Este fenótipo ganhou atendimento amplo",
+  opcaoC: " Este fenômeno atraiu ampla atenção",
+  opcaoD: " Este fenômeno tem juntado atenção espalhada",
+  correta: "C",
+  },
+  {
+  pergs: 'Qual palavra tem o mesmo significado de "about-face"?',
+  opcaoA: " facialize",
+  opcaoB: " hide",
+  opcaoC: " turnaround",
+  opcaoD: " defacing",
+  correta: "C",
+  },
+  {
+  pergs: 'Qual a tradução para esta frase? "regardless the support of the crowd."',
+  opcaoA: " foi difícil suportar o público.",
+  opcaoB: " Independentemente do apoio da multidão.",
+  opcaoC: " Hesitei em ajudar a multidão.",
+  opcaoD: " O povo não suportou o desleixo.",
+  correta: "B",
+  },
+  {
+  pergs: 'O que significa "Despite"?',
+  opcaoA: " desprezo",
+  opcaoB: " apesar de",
+  opcaoC: " despistar",
+  opcaoD: " disputar",
+  correta: "B",
+  },
+  {
+  pergs: 'Qual a tradução de "pattern"?',
+  opcaoA: " padrão",
+  opcaoB: " patrão",
+  opcaoC: " paternidade",
+  opcaoD: " partida",
+  correta: "A",
+  },
+  {
+  pergs: 'O que significa a expressão "to be in hot water"?',
+  opcaoA: " Estar em uma situação difícil",
+  opcaoB: " Estar em um lugar quente",
+  opcaoC: " Estar em uma reunião importante",
+  opcaoD: " Estar em uma sauna",
+  correta: "A",
+  },
+  {
+  pergs: 'qual frase tem o mesmo sentido da frase a seguir? "She has the world at her feet."',
+  opcaoA: " She is feeling overwhelmed.",
+  opcaoB: " She is extremely successful.",
+  opcaoC: " She is feeling unwell.",
+  opcaoD: " She has very expensive shoes.", 
+  correta: "B",
+  },
+  {
+  pergs: 'Complete a frase com o uso correto de "despite" ou "in spite of": ___ the challenges, they managed to complete the project.',
+  opcaoA: " Despite",
+  opcaoB: " In spite of",
+  opcaoC: " Both are correct",
+  opcaoD: " Despite of",
+  correta: "C",
+  },
+  {
+  pergs: 'Qual é o significado de "to put all your eggs in one basket"?',
+  opcaoA: " Confiar em várias opções para minimizar o risco",
+  opcaoB: " Colocar todas as suas apostas em uma única coisa",
+  opcaoC: " Fazer muitas coisas ao mesmo tempo",
+  opcaoD: " economizar dinheiro",
+  correta: "B",
+  },
+  {
+  pergs: 'Complete a frase com o uso correto de "on the verge of": The company is ___ launching a revolutionary new product.',
+  opcaoA: " in",
+  opcaoB: " on",
+  opcaoC: " at",
+  opcaoD: " about",
+  correta: "B",
+  }
 ]
 
-let fluente = [
-  {
-  	pergs: 'What is the correct form of the verb "to run" in the past participle?',
-  	opcaoA: "run",
-  	opcaoB: "ran",
-  	opcaoC: "runned",
-  	opcaoD: "running",
-  	correta: "A"
-  },  
-  {
-    pergs: 'O que significa o termo em inglês "intrinsic motivation"?',
-    opcaoA: "Uma abordagem de ensino que enfatiza a aprendizagem ativa.",
-    opcaoB: "Motivação interna que vem de interesses pessoais e satisfação interna.",
-    opcaoC: "Motivação externa baseada em recompensas materiais.",
-    opcaoD: "Um tipo de treinamento mental para o aumento da concentração.",
-    correta: "B"
-  },  
-  {
-  	pergs: 'Which sentence is in the Gerund form?',
-  	opcaoA: "I will go to the store.",
-  	opcaoB: "They have finished their homework.",
-  	opcaoC: "She is swimming in the pool.",
-  	opcaoD: "I enjoy reading books.",
-  	correta: "C"
-  },  
-  {
-  	pergs: 'What is the meaning of the idiom "to kick the bucket"?',
-  	opcaoA: "give up everything",
-  	opcaoB: "to go crazy",
-  	opcaoC: "to die",
-  	opcaoD: "to get angry",
-  	correta: "C"
-  },  
-  {
-  	pergs: 'What is the correct form of the verb "to do" in the subjunctive mood for "she"?',
-  	opcaoA: "do",
-  	opcaoB: "done",
-  	opcaoC: "did",
-  	opcaoD: "does",
-  	correta: "D"
-  },  
-  {
-  	pergs: 'what does the idiom "let the dust settle" mean?',
-  	opcaoA: "to allow a situation to become calm after something exciting or unusual has happened",
-  	opcaoB: "to wait for the dust settle in a road to keep going",
-  	opcaoC: "to get the house tidy",
-  	opcaoD: "to set fire to the woods",
-  	correta: "A"
-  },  
-  {
-  	pergs: 'Which word is an antonym for "diligent"?',
-  	opcaoA: "hardworking",
-  	opcaoB: "lazy",
-  	opcaoC: "punctual",
-  	opcaoD: "efficient",
-  	correta: "B"
-  },  
-  {
-  	pergs: 'She has been living in London ________ five years.',
-  	opcaoA: "for",
-  	opcaoB: "since",
-  	opcaoC: "during",
-  	opcaoD: "from",
-  	correta: "A"
-  },  
-  {
-  	pergs: 'What does the phrase "break the ice" mean?',
-  	opcaoA: "Start a conversation or social interaction.",
-  	opcaoB: "break something fragile",
-  	opcaoC: "make cold drinks",
-  	opcaoD: "remove snow from the streets",
-  	correta: "A"
-  },  
-  {
-  	pergs: 'What does the term "to think outside the box" mean?',
-  	opcaoA: "To think literally, disregarding the context.",
-  	opcaoB: "To think about the misteries of the universe and the world as a box",
-  	opcaoC: "To think in a creative and innovative way, breaking away from conventional norms.",
-  	opcaoD: "To think only within established boundaries.",
-  	correta: "C"
-  },  
-  {
-  	pergs: 'I had never seen such a beautiful sunset ________.',
-  	opcaoA: "before",
-  	opcaoB: "beyound",
-  	opcaoC: "evenly",
-  	opcaoD: "sooner",
-  	correta: "A"
-  }, 
-  {
-    pergs: "'he's pretending to be rich, that's why he's wearing that costume.' means...",
-    opcaoA: "ele está pretendendo ser rico, por isso está adotando esse costume.",
-    opcaoB: "ele está fingindo ser rico, é por isso que ele está vestindo aquela fantasia.",
-    opcaoC: "ele pretende ser rico, por isso está se acostumando a se vestir assim.",
-    opcaoD: "ele se finge de rico porque ele costuma vestir uma fantasia.",
-    correta: "B"
-  },  
-  {
-    pergs: 'What is the correct form of the verb "to have" in the present perfect continuous tense for "they"?',
-    opcaoA: "have been having",
-    opcaoB: "have had",
-    opcaoC: "has had",
-    opcaoD: "has been having",
-    correta: "A"
-  },  
-  {
-    pergs: 'which sentence is correct?.',
-    opcaoA: "If I would win the lottery, I will buy a mansion.",
-    opcaoB: "If I would win the lottery, I would buy a mansion.",
-    opcaoC: "If I win the lottery, I would buy a mansion.",
-    opcaoD: "If I win the lottery, I will buy a mansion.",
-    correta: "D"
-  },  
-  {
-    pergs: 'What is the meaning of the phrasal verb "look forward to"?',
-    opcaoA: "olhar para trás",
-    opcaoB: "prever o futuro",
-    opcaoC: "esperar ansiosamente por",
-    opcaoD: "procurar por",
-    correta: "C"
-  },  
-  {
-    pergs: 'If I had known the answer, ________ it.',
-    opcaoA: "I would have said",
-    opcaoB: "I would said",
-    opcaoC: "I would have say",
-    opcaoD: "I would say",
-    correta: "A"
-  },
-  {
-    pergs: `O que está dizendo neste audio? <button onclick="ouvir('seventy seven benevolent elephants')">&#128266;</button>`,
-    opcaoA: "said what you said involved elephants.",
-    opcaoB: "seven teens seven bad elements elephants.",
-    opcaoC: "seventy seven benevolent elephants.",
-    opcaoD: "sever the servant benevolent elephants.",
-    correta: "C"
-  },
-  {
-    pergs: `O que está dizendo neste audio? <button onclick="ouvir('the colonel is yelling at the lieutenant')">&#128266;</button>`,
-    opcaoA: "the kernel is selling a antenna.",
-    opcaoB: "the colonel is yelling at the lieutenant.",
-    opcaoC: "the  coronel is telling to the lieutenant.",
-    opcaoD: "the kernel is testing the antenna.",
-    correta: "B"
-  } 
-]
+let listening = []
 
 
 btnComecar.addEventListener('click', ()=> {
@@ -627,21 +531,20 @@ function iniciar() {
 
 function processaPergunta() {
   switch(categorias.value){
-    case 'basico':
-      bancoPerguntas = basico
+    case 'nivelA':
+      bancoPerguntas = nivelA
       break
-    case 'intermediario':
-      bancoPerguntas = intermediario
+    case 'nivelB':
+      bancoPerguntas = nivelB
       break
-    case 'avancado':
-      bancoPerguntas = avancado
+    case 'nivelC':
+      bancoPerguntas = nivelC
       break 
-    case 'fluente':
-      bancoPerguntas = fluente
+    case 'listening':
+      bancoPerguntas = listening
     }
 
-  console.log('respondidas ' + respondidas)
-	if(respondidas < 18) {
+	if(respondidas < 20) {
     
 		perguntaEmJogo = bancoPerguntas[respondidas]
     pergunta.innerHTML = perguntaEmJogo.pergs
@@ -662,7 +565,7 @@ function criaTelaFinal(){
   erradasFinal.innerHTML = `Erros: ${respErradas}`
   corretasFinal.innerHTML = `Acertos: ${respCorretas}`
   naoRespondFinal.innerHTML = `Sem respostas: ${naoRespondida}`
-  let porcento = Math.round((respCorretas / 18) * 100)
+  let porcento = Math.round((respCorretas / 20) * 100)
   porcentagem.innerHTML = `${porcento}%`
   let mensagem = ''
   if(porcento <= 40){
@@ -677,10 +580,10 @@ function criaTelaFinal(){
   if(porcento > 80 && porcento <= 98){
     mensagem = 'Parabéns! Sua pontução foi ótima!'
   }
-  if(porcento === 100 && categorias.value === 'fluente'){
+  if(porcento === 100 && categorias.value === 'nivelC'){
     mensagem = 'Congrats! You nailed it!'
   }
-  if(porcento === 100 && categorias.value === 'basico'){
+  if(porcento === 100 && categorias.value === 'nivelA'){
     mensagem = 'Parabéns pela pontução máxima, agora tente fazer os testes mais avançados!'
   }
   msgFinal.innerHTML = mensagem
@@ -696,7 +599,7 @@ function contador() {
     tempoContador--
     mostraContador.innerHTML = tempoContador
   } else {
-    tempoContador = 35
+    tempoContador = 60
     naoRespondida++
     processaPergunta()
   }
@@ -706,12 +609,13 @@ function contador() {
 function checaResposta(resposta) {
   if(resposta === perguntaEmJogo.correta) {
     respCorretas++
-    tempoContador = 35
+    tempoContador = 60
   } else {
     respErradas++
-    tempoContador = 35
+    tempoContador = 60
+    console.log(perguntaEmJogo.correta)
   }
-  if(respCorretas > 18) {
+  if(respCorretas > 20) {
     respCorretas = 0
   }
   processaPergunta()
