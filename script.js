@@ -590,7 +590,7 @@ let listening = [
   correta: "B",
   },
   {
-  pergs: `Clique no ícone para ouvir o audio e responda o que você ouve: <button onclick='ouvir("what's your favorite type of food?")'>&#128266;</button>`,
+  pergs: `Clique no ícone para ouvir o audio e responda o que você ouve: <button onclick='ouvir("whats your favorite type of food?")'>&#128266;</button>`,
   opcaoA: "what's your favorite type of food?",
   opcaoB: "what's your favorite type of fruit?",
   opcaoC: "why is your flavor like a fruit?",
@@ -598,7 +598,7 @@ let listening = [
   correta: "A",
   },
   {
-  pergs: `Clique no ícone para ouvir o audio e responda o que você ouve: <button onclick='ouvir("I think it's important to learn other languages")'>&#128266;</button>`,
+  pergs: `Clique no ícone para ouvir o audio e responda o que você ouve: <button onclick='ouvir("I think its important to learn other languages")'>&#128266;</button>`,
   opcaoA: "My sin is to import too much oranges",
   opcaoB: "I think it's an indoor tent or their lens gauges",
   opcaoC: "I think it's important to love all the land godess",
@@ -622,7 +622,7 @@ let listening = [
   correta: "A",
   },
   {
-  pergs: `Clique no ícone para ouvir o audio e responda o que você ouve: <button onclick="ouvir("would you like to join the group?")">&#128266;</button>`,
+  pergs: `Clique no ícone para ouvir o audio e responda o que você ouve: <button onclick='ouvir("would you like to join the group?")'>&#128266;</button>`,
   opcaoA: "could you find me coin or goods?",
   opcaoB: "would you lie to join the group?",
   opcaoC: "would you like to join the group?",
@@ -631,7 +631,7 @@ let listening = [
   },
 ///////
   {
-  pergs: `Clique no ícone para ouvir o audio e responda o que você ouve: <button onclick="ouvir("the macaw grabbed the straw with its paw")">&#128266;</button>`,
+  pergs: `Clique no ícone para ouvir o audio e responda o que você ouve: <button onclick='ouvir("the macaw grabbed the straw with its paw")'>&#128266;</button>`,
   opcaoA: "the macaw grabbed the straw with its paw",
   opcaoB: "they mocked up the grandma with the spam",
   opcaoC: "they might all eat this strawberries pots",
@@ -639,7 +639,7 @@ let listening = [
   correta: "A",
   },
   {
-  pergs: `Clique no ícone para ouvir o audio e responda o que você ouve: <button onclick="ouvir("Do you want to escape the urban environment?")">&#128266;</button>`,
+  pergs: `Clique no ícone para ouvir o audio e responda o que você ouve: <button onclick='ouvir("Do you want to escape the urban environment?")'>&#128266;</button>`,
   opcaoA: "Do you want to scare the europe enviroment?",
   opcaoB: "Do you want to escape the urban environment?",
   opcaoC: "don't you want to escape the urban virus?",
@@ -647,7 +647,7 @@ let listening = [
   correta: "A",
   },
   {
-  pergs: `Clique no ícone para ouvir o audio e responda o que você ouve: <button onclick="ouvir("he has a cough and a sore throat")">&#128266;</button>`,
+  pergs: `Clique no ícone para ouvir o audio e responda o que você ouve: <button onclick='ouvir("he has a cough and a sore throat")'>&#128266;</button>`,
   opcaoA: "He has a coffee and a soup thrown",
   opcaoB: "He has a cough and had soup and toast",
   opcaoC: "he has a coffee and sort of a toast",
@@ -655,7 +655,7 @@ let listening = [
   correta: "D",
   },
   {
-  pergs:  `Clique no ícone para ouvir o audio e responda o que você ouve: <button onclick="ouvir("The squirrel was holding a nut then he throw it away")">&#128266;</button>`,
+  pergs:  `Clique no ícone para ouvir o audio e responda o que você ouve: <button onclick='ouvir("The squirrel was holding a nut then he throw it away")'>&#128266;</button>`,
   opcaoA: "The squid rolled and was holding a mug then he throw it away",
   opcaoB: "The squirrel was holding a nut then he throw it away",
   opcaoC: "This kid rolled as a nut then he throw up that way",
@@ -663,7 +663,7 @@ let listening = [
   correta: "B",
   },
   {
-  pergs: `Clique no ícone para ouvir o audio e responda o que você ouve: <button onclick="ouvir("Would a chess player eat cheese while playing chess?")">&#128266;</button>`,
+  pergs: `Clique no ícone para ouvir o audio e responda o que você ouve: <button onclick='ouvir("Would a chess player eat cheese while playing chess?")'>&#128266;</button>`,
   opcaoA: "would a chest pain make it choose a wise chat?",
   opcaoB: "would a jazz player eat chips while playing jazz?",
   opcaoC: "Would a chess player eat cheese while playing chess?",
@@ -671,7 +671,7 @@ let listening = [
   correta: "C",
   },
   {
-  pergs: `Clique no ícone para ouvir o audio e responda o que você ouve: <button onclick="ouvir("I saw a red hat under the table")">&#128266;</button>`,
+  pergs: `Clique no ícone para ouvir o audio e responda o que você ouve: <button onclick='ouvir("I saw a red hat under the table")'>&#128266;</button>`,
   opcaoA: "My socks are rarely on the table",
   opcaoB: "I saw a red rat under the table",
   opcaoC: "I sold a rare head on a sale",
