@@ -590,7 +590,7 @@ let listening = [
   correta: "B",
   },
   {
-  pergs: `Clique no ícone para ouvir o audio e responda o que você ouve: <button onclick="ouvir("what's your favorite type of food?")">&#128266;</button>`,
+  pergs: `Clique no ícone para ouvir o audio e responda o que você ouve: <button onclick='ouvir("what's your favorite type of food?")'>&#128266;</button>`,
   opcaoA: "what's your favorite type of food?",
   opcaoB: "what's your favorite type of fruit?",
   opcaoC: "why is your flavor like a fruit?",
@@ -598,7 +598,7 @@ let listening = [
   correta: "A",
   },
   {
-  pergs: `Clique no ícone para ouvir o audio e responda o que você ouve: <button onclick="ouvir("I think it's important to learn other languages")">&#128266;</button>`,
+  pergs: `Clique no ícone para ouvir o audio e responda o que você ouve: <button onclick='ouvir("I think it's important to learn other languages")'>&#128266;</button>`,
   opcaoA: "My sin is to import too much oranges",
   opcaoB: "I think it's an indoor tent or their lens gauges",
   opcaoC: "I think it's important to love all the land godess",
@@ -606,7 +606,7 @@ let listening = [
   correta: "D",
   },
   {
-  pergs: `Clique no ícone para ouvir o audio e responda o que você ouve: <button onclick="ouvir("Where did you go?")">&#128266;</button>`,
+  pergs: `Clique no ícone para ouvir o audio e responda o que você ouve: <button onclick="ouvir('Where did you go?')">&#128266;</button>`,
   opcaoA: "where is diego?",
   opcaoB: "where did you go?",
   opcaoC: "wait this and go",
@@ -614,7 +614,7 @@ let listening = [
   correta: "B",
   },
   {
-  pergs: `Clique no ícone para ouvir o audio e responda o que você ouve: <button onclick="ouvir("I bought an ice cream today")">&#128266;</button>`,
+  pergs: `Clique no ícone para ouvir o audio e responda o que você ouve: <button onclick="ouvir('I bought an ice cream today')">&#128266;</button>`,
   opcaoA: "I bought an ice cream today",
   opcaoB: "I brought some ice cream today",
   opcaoC: "I bought an eyes cream today",
